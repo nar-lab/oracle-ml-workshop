@@ -1,0 +1,71 @@
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Tue Sep 26 06:03:44 2017
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   control_files/trans.ctl
+Data File:      data_files/trans.csv
+  File processing option string: "str '
+'"
+  Bad File:     bad_records/trans.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+Silent options: FEEDBACK, ERRORS and DISCARDS
+
+Table BERKA_TRX, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+TRANS_ID                            FIRST  4000   ;  O(") CHARACTER            
+                                                      O(")
+ACCOUNT_ID                           NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+TRX_DATE                             NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+TYPE                                 NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+OPERATION                            NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+AMOUNT                               NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+BALANCE                              NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+K_SYMBOL                             NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+BANK                                 NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+ACCOUNT                              NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+
+value used for ROWS parameter changed from 64 to 6
+
+Table BERKA_TRX:
+  1056320 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 240120 bytes(6 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:       1056320
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Tue Sep 26 06:03:44 2017
+Run ended on Tue Sep 26 06:19:40 2017
+
+Elapsed time was:     00:15:56.37
+CPU time was:         00:01:32.48

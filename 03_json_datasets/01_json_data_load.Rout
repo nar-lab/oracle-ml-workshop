@@ -1,0 +1,232 @@
+
+Oracle Distribution of R version 3.2.0  (--) -- "Full of Ingredients"
+Copyright (C)  The R Foundation for Statistical Computing
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+You are using Oracle's distribution of R. Please contact
+Oracle Support for any problems you encounter with this
+distribution.
+
+> source("02_worldbank_data_import.R",echo=TRUE)
+
+> library(ROracle)
+Loading required package: DBI
+
+> drv <- dbDriver("Oracle")
+
+> host <- "localhost"
+
+> port <- 1521
+
+> sid <- "ORCL"
+
+> connect.string <- paste("(DESCRIPTION=", "(ADDRESS=(PROTOCOL=tcp)(HOST=", 
++     host, ")(PORT=", port, "))", "(CONNECT_DATA=(SID=", sid, 
++     ")) ..." ... [TRUNCATED] 
+
+> constraint.table <- "CONSTRAINT \"WB_JSON_CHECK\" CHECK (doc IS JSON) ENABLE"
+
+> conn <- dbConnect(drv, username = "ZIRAAT", password = "teknoloji", 
++     dbname = connect.string)
+
+> if (dbExistsTable(conn, "JSON_TMP")) {
++     dbRemoveTable(conn, "JSON_TMP")
++ }
+[1] TRUE
+
+> path <- "world_bank.json"
+
+> data <- readLines(path)
+
+> wb.json.df <- data.frame(DOC = data)
+
+> attr(wb.json.df$DOC, "ora.type") <- "clob"
+
+> dbWriteTable(conn, "JSON_TMP", wb.json.df)
+[1] TRUE
+
+> if (dbExistsTable(conn, "WORLDBANK_JSON")) {
++     dbRemoveTable(conn, "WORLDBANK_JSON")
++ }
+[1] TRUE
+
+> create.stmt <- paste("CREATE TABLE WORLDBANK_JSON(DOC CLOB ", 
++     constraint.table, " )", sep = "")
+
+> qry <- dbSendQuery(conn, create.stmt)
+
+> execute(qry)
+NULL
+
+> insert.stmt <- "INSERT INTO WORLDBANK_JSON SELECT DOC FROM JSON_TMP"
+
+> qry <- dbSendQuery(conn, insert.stmt)
+
+> execute(qry)
+NULL
+
+> qry <- dbSendQuery(conn, "COMMIT")
+
+> execute(qry)
+NULL
+
+> if (dbExistsTable(conn, "JSON_TMP")) {
++     dbRemoveTable(conn, "JSON_TMP")
++ }
+[1] TRUE
+
+> dbDisconnect(conn)
+[1] TRUE
+> source("03_stock_data_import.R",echo=TRUE)
+
+> library(ROracle)
+
+> drv <- dbDriver("Oracle")
+
+> host <- "localhost"
+
+> port <- 1521
+
+> sid <- "ORCL"
+
+> connect.string <- paste("(DESCRIPTION=", "(ADDRESS=(PROTOCOL=tcp)(HOST=", 
++     host, ")(PORT=", port, "))", "(CONNECT_DATA=(SID=", sid, 
++     ")) ..." ... [TRUNCATED] 
+
+> constraint.table <- "CONSTRAINT \"ST_JSON_CHECK\" CHECK (doc IS JSON) ENABLE"
+
+> conn <- dbConnect(drv, username = "ZIRAAT", password = "teknoloji", 
++     dbname = connect.string)
+
+> if (dbExistsTable(conn, "JSON_TMP")) {
++     dbRemoveTable(conn, "JSON_TMP")
++ }
+
+> path <- "stocks.json"
+
+> data <- readLines(path)
+
+> wb.json.df <- data.frame(DOC = data)
+
+> attr(wb.json.df$DOC, "ora.type") <- "clob"
+
+> dbWriteTable(conn, "JSON_TMP", wb.json.df)
+[1] TRUE
+
+> if (dbExistsTable(conn, "STOCK_JSON")) {
++     dbRemoveTable(conn, "STOCK_JSON")
++ }
+
+> create.stmt <- paste("CREATE TABLE STOCK_JSON(DOC CLOB ", 
++     constraint.table, " )", sep = "")
+
+> qry <- dbSendQuery(conn, create.stmt)
+
+> execute(qry)
+NULL
+
+> insert.stmt <- "INSERT INTO STOCK_JSON SELECT DOC FROM JSON_TMP"
+
+> qry <- dbSendQuery(conn, insert.stmt)
+
+> execute(qry)
+NULL
+
+> qry <- dbSendQuery(conn, "COMMIT")
+
+> execute(qry)
+NULL
+
+> if (dbExistsTable(conn, "JSON_TMP")) {
++     dbRemoveTable(conn, "JSON_TMP")
++ }
+[1] TRUE
+
+> dbDisconnect(conn)
+[1] TRUE
+> source("04_company_data_import.R",echo=TRUE)
+
+> library(ROracle)
+
+> drv <- dbDriver("Oracle")
+
+> host <- "localhost"
+
+> port <- 1521
+
+> sid <- "ORCL"
+
+> connect.string <- paste("(DESCRIPTION=", "(ADDRESS=(PROTOCOL=tcp)(HOST=", 
++     host, ")(PORT=", port, "))", "(CONNECT_DATA=(SID=", sid, 
++     ")) ..." ... [TRUNCATED] 
+
+> constraint.table <- "CONSTRAINT \"CM_JSON_CHECK\" CHECK (doc IS JSON) ENABLE"
+
+> conn <- dbConnect(drv, username = "ZIRAAT", password = "teknoloji", 
++     dbname = connect.string)
+
+> if (dbExistsTable(conn, "JSON_TMP")) {
++     dbRemoveTable(conn, "JSON_TMP")
++ }
+
+> path <- "companies.json"
+
+> data <- readLines(path)
+
+> wb.json.df <- data.frame(DOC = data)
+
+> attr(wb.json.df$DOC, "ora.type") <- "clob"
+
+> dbWriteTable(conn, "JSON_TMP", wb.json.df)
+[1] TRUE
+
+> if (dbExistsTable(conn, "COMPANY_JSON")) {
++     dbRemoveTable(conn, "COMPANY_JSON")
++ }
+[1] TRUE
+
+> create.stmt <- paste("CREATE TABLE COMPANY_JSON(DOC CLOB ", 
++     constraint.table, " )", sep = "")
+
+> qry <- dbSendQuery(conn, create.stmt)
+
+> execute(qry)
+NULL
+
+> insert.stmt <- "INSERT INTO COMPANY_JSON SELECT DOC FROM JSON_TMP"
+
+> qry <- dbSendQuery(conn, insert.stmt)
+
+> execute(qry)
+NULL
+
+> qry <- dbSendQuery(conn, "COMMIT")
+
+> execute(qry)
+NULL
+
+> if (dbExistsTable(conn, "JSON_TMP")) {
++     dbRemoveTable(conn, "JSON_TMP")
++ }
+[1] TRUE
+
+> dbDisconnect(conn)
+[1] TRUE
+> 
+> proc.time()
+   user  system elapsed 
+ 19.082   2.015 486.675 

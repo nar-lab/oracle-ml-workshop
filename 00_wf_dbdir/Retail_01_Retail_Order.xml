@@ -1,0 +1,1971 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkflowProcess Version="12.1.0.2.3" DBVersion="12.1.0.2.0" Schema="ZIRAAT" xmlns="http://xmlns.oracle.com/odmr11">
+    <Nodes>
+        <DataSource Id="10001" Name="RETAIL_CATEGORIES" Status="Complete">
+            <Icon XCOORD="445" YCOORD="358"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10001" as (select "RETAIL_CATEGORIES"."CATEGORY_ID", 
+"RETAIL_CATEGORIES"."CATEGORY_NAME", 
+"RETAIL_CATEGORIES"."CATEGORY_DEPARTMENT_ID" 
+from "ZIRAAT"."RETAIL_CATEGORIES"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CATEGORY_DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="RETAIL_CATEGORIES" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10002" Name="RETAIL_CUSTOMERS" Status="Complete">
+            <Icon XCOORD="989" YCOORD="473"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10002" as (select "RETAIL_CUSTOMERS"."CUSTOMER_CITY", 
+"RETAIL_CUSTOMERS"."CUSTOMER_EMAIL", 
+"RETAIL_CUSTOMERS"."CUSTOMER_FNAME", 
+"RETAIL_CUSTOMERS"."CUSTOMER_LNAME", 
+"RETAIL_CUSTOMERS"."CUSTOMER_PASSWORD", 
+"RETAIL_CUSTOMERS"."CUSTOMER_STATE", 
+"RETAIL_CUSTOMERS"."CUSTOMER_STREET", 
+"RETAIL_CUSTOMERS"."CUSTOMER_ZIPCODE", 
+"RETAIL_CUSTOMERS"."CUSTOMER_ID" 
+from "ZIRAAT"."RETAIL_CUSTOMERS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_EMAIL" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_FNAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_LNAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_PASSWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="RETAIL_CUSTOMERS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10003" Name="RETAIL_DEPARTMENTS" Status="Complete">
+            <Icon XCOORD="594" YCOORD="358"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10003" as (select "RETAIL_DEPARTMENTS"."DEPARTMENT_NAME", 
+"RETAIL_DEPARTMENTS"."DEPARTMENT_ID" 
+from "ZIRAAT"."RETAIL_DEPARTMENTS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="RETAIL_DEPARTMENTS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10004" Name="RETAIL_ORDERS" Status="Complete">
+            <Icon XCOORD="669" YCOORD="475"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10004" as (select "RETAIL_ORDERS"."ORDER_ID", 
+"RETAIL_ORDERS"."ORDER_DATE", 
+"RETAIL_ORDERS"."ORDER_CUSTOMER_ID", 
+"RETAIL_ORDERS"."ORDER_STATUS" 
+from "ZIRAAT"."RETAIL_ORDERS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_DATE" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="RETAIL_ORDERS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10005" Name="RETAIL_ORDER_ITEMS" Status="Complete">
+            <Icon XCOORD="238" YCOORD="252"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10005" as (select "RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_PRICE", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_ORDER_ID", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_ID", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_ID", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_QUANTITY", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_SUBTOTAL" 
+from "ZIRAAT"."RETAIL_ORDER_ITEMS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="RETAIL_ORDER_ITEMS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10006" Name="RETAIL_PRODUCTS" Status="Complete">
+            <Icon XCOORD="267" YCOORD="360"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10006" as (select "RETAIL_PRODUCTS"."PRODUCT_DESCRIPTION", 
+"RETAIL_PRODUCTS"."PRODUCT_PRICE", 
+"RETAIL_PRODUCTS"."PRODUCT_ID", 
+"RETAIL_PRODUCTS"."PRODUCT_CATEGORY_ID", 
+"RETAIL_PRODUCTS"."PRODUCT_NAME", 
+"RETAIL_PRODUCTS"."PRODUCT_IMAGE" 
+from "ZIRAAT"."RETAIL_PRODUCTS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRODUCT_CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="RETAIL_PRODUCTS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataProfile Id="10025" Name="Retail Order Item Explore" Status="Complete">
+            <Icon XCOORD="348" YCOORD="118"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10025" AS ( SELECT   ATTR,
+  DATA_TYPE,
+  NULL_PERCENT,
+  DISTINCT_CNT,
+  DISTINCT_PERCENT,
+  MODE_VALUE,
+  AVG,
+  AVG_DATE,
+  AVG_TS_TZ,
+  MEDIAN_VAL,
+  MEDIAN_DATE,
+  MEDIAN_TS_TZ,
+  MIN,
+  MAX,
+  STD,
+  VAR,
+  SKEWNESS,
+  KURTOSIS,
+  HISTOGRAMS FROM RETAIL_ORDER_ITEMS_EXP)</SQLExpression>
+            <DataProfileInput>
+                <Attributes>
+                    <Attribute Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="ORDER_ITEM_PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                </Attributes>
+            </DataProfileInput>
+            <DataProfileOutput>
+                <Attributes>
+                    <Attribute Name="ATTR" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="DATA_TYPE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="NULL_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_CNT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MODE_VALUE" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="AVG" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="AVG_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="AVG_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_VAL" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MEDIAN_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MIN" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="MAX" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="STD" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="VAR" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="SKEWNESS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="KURTOSIS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="HISTOGRAMS" DataType="ODMR_HISTOGRAMS" Status="Valid"/>
+                </Attributes>
+            </DataProfileOutput>
+            <DataProfileSettings>
+                <NumericalBins>10</NumericalBins>
+                <CategoricalBins>10</CategoricalBins>
+                <DateBins>10</DateBins>
+            </DataProfileSettings>
+            <StatisticTable Name="RETAIL_ORDER_ITEMS_EXP" CreationDate="2017-07-20T13:49:16"/>
+            <StatsSelection percentdistinct="true" percentnull="true" max="true" min="true" avg="true" std="true" var="true" kurtosis="false" median="true" skewness="false" mode="true" modesampled="true" modeall="false" histogram="true" rowcount="172198"/>
+            <SampleSettings UseFullData="true" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <Random Seed="12345"/>
+                </Method>
+            </SampleSettings>
+        </DataProfile>
+        <DataProfile AutoSpec="No" Id="10027" Name="Retail Customers Explore" Status="Complete">
+            <Icon XCOORD="1141" YCOORD="474"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10027" AS ( SELECT   ATTR,
+  DATA_TYPE,
+  NULL_PERCENT,
+  DISTINCT_CNT,
+  DISTINCT_PERCENT,
+  MODE_VALUE,
+  AVG,
+  AVG_DATE,
+  AVG_TS_TZ,
+  MEDIAN_VAL,
+  MEDIAN_DATE,
+  MEDIAN_TS_TZ,
+  MIN,
+  MAX,
+  STD,
+  VAR,
+  SKEWNESS,
+  KURTOSIS,
+  HISTOGRAMS FROM RETAIL_CUSTOMERS_EXP)</SQLExpression>
+            <DataProfileInput>
+                <Attributes>
+                    <Attribute Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                </Attributes>
+            </DataProfileInput>
+            <DataProfileOutput>
+                <Attributes>
+                    <Attribute Name="ATTR" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="DATA_TYPE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="NULL_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_CNT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MODE_VALUE" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="AVG" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="AVG_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="AVG_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_VAL" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MEDIAN_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MIN" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="MAX" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="STD" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="VAR" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="SKEWNESS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="KURTOSIS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="HISTOGRAMS" DataType="ODMR_HISTOGRAMS" Status="Valid"/>
+                </Attributes>
+            </DataProfileOutput>
+            <DataProfileSettings>
+                <NumericalBins>10</NumericalBins>
+                <CategoricalBins>10</CategoricalBins>
+                <DateBins>10</DateBins>
+            </DataProfileSettings>
+            <StatisticTable Name="RETAIL_CUSTOMERS_EXP" CreationDate="2017-07-20T14:23:52"/>
+            <StatsSelection percentdistinct="true" percentnull="true" max="true" min="true" avg="true" std="true" var="true" kurtosis="false" median="true" skewness="false" mode="true" modesampled="true" modeall="false" histogram="true" rowcount="12435"/>
+            <SampleSettings UseFullData="true" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <Random Seed="12345"/>
+                </Method>
+            </SampleSettings>
+        </DataProfile>
+        <DataProfile Id="10029" Name="Retail Orders Explore" Status="Complete">
+            <Icon XCOORD="840" YCOORD="477"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10029" AS ( SELECT   ATTR,
+  DATA_TYPE,
+  NULL_PERCENT,
+  DISTINCT_CNT,
+  DISTINCT_PERCENT,
+  MODE_VALUE,
+  AVG,
+  AVG_DATE,
+  AVG_TS_TZ,
+  MEDIAN_VAL,
+  MEDIAN_DATE,
+  MEDIAN_TS_TZ,
+  MIN,
+  MAX,
+  STD,
+  VAR,
+  SKEWNESS,
+  KURTOSIS,
+  HISTOGRAMS FROM RETAIL_ORDERS_EXP)</SQLExpression>
+            <DataProfileInput>
+                <Attributes>
+                    <Attribute Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="ORDER_CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="ORDER_TIMESTAMP" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                </Attributes>
+            </DataProfileInput>
+            <DataProfileOutput>
+                <Attributes>
+                    <Attribute Name="ATTR" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="DATA_TYPE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="NULL_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_CNT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MODE_VALUE" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="AVG" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="AVG_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="AVG_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_VAL" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MEDIAN_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MIN" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="MAX" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="STD" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="VAR" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="SKEWNESS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="KURTOSIS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="HISTOGRAMS" DataType="ODMR_HISTOGRAMS" Status="Valid"/>
+                </Attributes>
+            </DataProfileOutput>
+            <DataProfileSettings>
+                <NumericalBins>10</NumericalBins>
+                <CategoricalBins>10</CategoricalBins>
+                <DateBins>10</DateBins>
+            </DataProfileSettings>
+            <StatisticTable Name="RETAIL_ORDERS_EXP" CreationDate="2017-07-20T14:22:44"/>
+            <StatsSelection percentdistinct="true" percentnull="true" max="true" min="true" avg="true" std="true" var="true" kurtosis="false" median="true" skewness="false" mode="true" modesampled="true" modeall="false" histogram="true" rowcount="68883"/>
+            <SampleSettings UseFullData="true" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <Random Seed="12345"/>
+                </Method>
+            </SampleSettings>
+        </DataProfile>
+        <CreateTable TableName="OUTPUT_4_17" Table="true" Id="10043" Name="RETAIL_CUSTOMER_DM" Status="Complete">
+            <Icon XCOORD="1249" YCOORD="254"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10043" AS ( SELECT  "CUSTOMER_CITY" ,
+ "CUSTOMER_STATE" ,
+ "CUSTOMER_STREET" ,
+ "CUSTOMER_ZIPCODE" ,
+ "CUSTOMER_ID" ,
+ "CATEGORY_NAME_STATS_MODE" ,
+ "CATEGORY__COUNT_DISTINCT" ,
+ "DEPARTMEN_COUNT_DISTINCT" ,
+ "DEPARTMENT_NA_STATS_MODE" ,
+ "ORDER_ID_COUNT_DISTINCT" ,
+ "ORDER_ITEM_PRODUCT_P_MIN" ,
+ "ORDER_ITEM_PRODUCT_P_MAX" ,
+ "ORDER_ITEM_PRODUCT_P_AVG" ,
+ "ORDER_ITEM_QUANTITY_MIN" ,
+ "ORDER_ITEM_QUANTITY_MAX" ,
+ "ORDER_ITEM_QUANTI_MEDIAN" ,
+ "ORDER_ITEM_SUBTOTAL_SUM" ,
+ "ORDER_ITEM_SUBTOTAL_AVG" ,
+ "PRODUCT_D_COUNT_DISTINCT" ,
+ "PRODUCT_DESCR_STATS_MODE" ,
+ "PRODUCT_N_COUNT_DISTINCT" ,
+ "PRODUCT_NAME_STATS_MODE" ,
+ "COMPLETE_FLAG"  FROM "OUTPUT_4_17")</SQLExpression>
+            <DBAttributes>
+                <DBAttribute Key="No" Index="No" Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="CATEGORY_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="DEPARTMENT_NA_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ID_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_SUBTOTAL_SUM" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="PRODUCT_D_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="PRODUCT_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <DBAttribute Key="No" Index="No" Name="COMPLETE_FLAG" DataType="NUMBER" Status="Valid"/>
+            </DBAttributes>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </CreateTable>
+        <Aggregation Id="10038" Name="Customer Based DM" Status="Complete">
+            <Icon XCOORD="1064" YCOORD="253"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10038" as (SELECT  t0."CUSTOMER_CITY",  t0."CUSTOMER_STATE",  t0."CUSTOMER_STREET",  t0."CUSTOMER_ZIPCODE",  t0."CUSTOMER_ID", 
+ t0."CATEGORY_NAME_STATS_MODE", 
+ t0."CATEGORY__COUNT_DISTINCT", 
+ t0."DEPARTMEN_COUNT_DISTINCT", 
+ t0."DEPARTMENT_NA_STATS_MODE", 
+ t0."ORDER_ID_COUNT_DISTINCT", 
+ t0."ORDER_ITEM_PRODUCT_P_MIN", 
+ t0."ORDER_ITEM_PRODUCT_P_MAX", 
+ t0."ORDER_ITEM_PRODUCT_P_AVG", 
+ t0."ORDER_ITEM_QUANTITY_MIN", 
+ t0."ORDER_ITEM_QUANTITY_MAX", 
+ t0."ORDER_ITEM_QUANTI_MEDIAN", 
+ t0."ORDER_ITEM_SUBTOTAL_SUM", 
+ t0."ORDER_ITEM_SUBTOTAL_AVG", 
+ t0."PRODUCT_D_COUNT_DISTINCT", 
+ t0."PRODUCT_DESCR_STATS_MODE", 
+ t0."PRODUCT_N_COUNT_DISTINCT", 
+ t0."PRODUCT_NAME_STATS_MODE", 
+ t0."COMPLETE_FLAG"
+FROM
+  (SELECT  "CUSTOMER_CITY","CUSTOMER_STATE","CUSTOMER_STREET","CUSTOMER_ZIPCODE","CUSTOMER_ID", 
+    STATS_MODE("CATEGORY_NAME") "CATEGORY_NAME_STATS_MODE"
+    ,COUNT(DISTINCT("CATEGORY_NAME")) "CATEGORY__COUNT_DISTINCT"
+    ,COUNT(DISTINCT("DEPARTMENT_NAME")) "DEPARTMEN_COUNT_DISTINCT"
+    ,STATS_MODE("DEPARTMENT_NAME") "DEPARTMENT_NA_STATS_MODE"
+    ,COUNT(DISTINCT("ORDER_ID")) "ORDER_ID_COUNT_DISTINCT"
+    ,MIN("ORDER_ITEM_PRODUCT_PRICE") "ORDER_ITEM_PRODUCT_P_MIN"
+    ,MAX("ORDER_ITEM_PRODUCT_PRICE") "ORDER_ITEM_PRODUCT_P_MAX"
+    ,AVG("ORDER_ITEM_PRODUCT_PRICE") "ORDER_ITEM_PRODUCT_P_AVG"
+    ,MIN("ORDER_ITEM_QUANTITY") "ORDER_ITEM_QUANTITY_MIN"
+    ,MAX("ORDER_ITEM_QUANTITY") "ORDER_ITEM_QUANTITY_MAX"
+    ,MEDIAN("ORDER_ITEM_QUANTITY") "ORDER_ITEM_QUANTI_MEDIAN"
+    ,SUM("ORDER_ITEM_SUBTOTAL") "ORDER_ITEM_SUBTOTAL_SUM"
+    ,AVG("ORDER_ITEM_SUBTOTAL") "ORDER_ITEM_SUBTOTAL_AVG"
+    ,COUNT(DISTINCT("PRODUCT_DESCRIPTION")) "PRODUCT_D_COUNT_DISTINCT"
+    ,STATS_MODE("PRODUCT_DESCRIPTION") "PRODUCT_DESCR_STATS_MODE"
+    ,COUNT(DISTINCT("PRODUCT_NAME")) "PRODUCT_N_COUNT_DISTINCT"
+    ,STATS_MODE("PRODUCT_NAME") "PRODUCT_NAME_STATS_MODE"
+    ,COUNT(DISTINCT CASE WHEN "ORDER_STATUS" = 'COMPLETE' THEN "ORDER_ID" ELSE NULL END) "COMPLETE_FLAG"
+  FROM {INPUT_SOURCE}
+   
+  GROUP BY "CUSTOMER_CITY","CUSTOMER_STATE","CUSTOMER_STREET","CUSTOMER_ZIPCODE","CUSTOMER_ID") t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="CATEGORY_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                    <AggregationFunction>STATS_MODE()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="DEPARTMENT_NA_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                    <AggregationFunction>STATS_MODE()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ID_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>MIN()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>MAX()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>AVG()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>MIN()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>MAX()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>MEDIAN()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_SUBTOTAL_SUM" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>SUM()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>AVG()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="PRODUCT_D_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                    <AggregationFunction>STATS_MODE()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="PRODUCT_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                    <AggregationFunction>STATS_MODE()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Expression>COUNT(DISTINCT CASE WHEN "ORDER_STATUS" = 'COMPLETE' THEN "ORDER_ID" ELSE NULL END)</Expression>
+                    </Source>
+                    <Output Name="COMPLETE_FLAG" DataType="NUMBER" Status="Valid" Alias="COMPLETE_FLAG"/>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <Aggregation Id="10045" Name="Complete vs Order Cnt" Status="Complete">
+            <Icon XCOORD="1278" YCOORD="138"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10045" as (SELECT  t0."ORDER_ID_COUNT_DISTINCT",  t0."COMPLETE_FLAG", 
+ t0."CUSTOMER__COUNT_DISTINCT"
+FROM
+  (SELECT  "ORDER_ID_COUNT_DISTINCT","COMPLETE_FLAG", 
+    COUNT(DISTINCT("CUSTOMER_ID")) "CUSTOMER__COUNT_DISTINCT"
+  FROM {INPUT_SOURCE}
+   
+  GROUP BY "ORDER_ID_COUNT_DISTINCT","COMPLETE_FLAG") t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute xsi:type="DBColumnType" Key="No" Index="No" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="CUSTOMER__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Name="ORDER_ID_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="COMPLETE_FLAG" DataType="NUMBER" Status="Valid"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <Aggregation Id="10058" Name="Target Distribution" Status="Complete">
+            <Icon XCOORD="1455" YCOORD="144"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10058" as (SELECT  t0."TARGET", 
+ t0."CUSTOMER__COUNT_DISTINCT"
+FROM
+  (SELECT  "TARGET", 
+    COUNT(DISTINCT("CUSTOMER_ID")) "CUSTOMER__COUNT_DISTINCT"
+  FROM {INPUT_SOURCE}
+   
+  GROUP BY "TARGET") t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="CUSTOMER__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Name="TARGET" DataType="NUMBER" Status="Valid"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <Transformation Id="10030" Name="Order Date Transform" Status="Complete">
+            <Icon XCOORD="744" YCOORD="358"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10030" AS ( SELECT "ORDER_ID",
+  "ORDER_CUSTOMER_ID",
+  "ORDER_STATUS", (TIMESTAMP '1970-01-01 00:00:00 GMT' +
+   NUMTODSINTERVAL("ORDER_DATE" /1000, 'SECOND'))
+ as "ORDER_TIMESTAMP" FROM {INPUT_SOURCE} ) </SQLExpression>
+            <TransformationSourceAttributes>
+                <TransformationSourceAttributeType Name="ORDER_ID" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_DATE" DataType="NUMBER" Status="Valid">
+                    <IsOutput>false</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_CUSTOMER_ID" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+            </TransformationSourceAttributes>
+            <TransformedAttributes>
+                <MapTransformedSourceType>
+                    <key Name="ORDER_TIMESTAMP" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid">
+                        <IsOutput>true</IsOutput>
+                        <TransformationElementType>
+                            <CustomTransformationEx> (TIMESTAMP '1970-01-01 00:00:00 GMT' +
+   NUMTODSINTERVAL("ORDER_DATE" /1000, 'SECOND'))
+</CustomTransformationEx>
+                        </TransformationElementType>
+                        <Modified>false</Modified>
+                    </key>
+                    <StringCollectionNames/>
+                </MapTransformedSourceType>
+            </TransformedAttributes>
+            <DataProfileSettings>
+                <NumericalBins>10</NumericalBins>
+                <CategoricalBins>10</CategoricalBins>
+                <DateBins>10</DateBins>
+            </DataProfileSettings>
+            <SampleSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <Random Seed="12345"/>
+                </Method>
+                <OutputTable Name="ODMR$13_34_08_193559TVKUQQI" CreationDate="2017-07-20T13:34:23"/>
+            </SampleSettings>
+            
+            <StatsSelection percentdistinct="true" percentnull="true" max="true" min="true" avg="true" std="true" var="true" kurtosis="false" median="true" skewness="false" mode="true" modesampled="true" modeall="false" histogram="true" rowcount="1990"/>
+        </Transformation>
+        <Transformation Id="10047" Name="Target Variable" Status="Complete">
+            <Icon XCOORD="1399" YCOORD="254"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10047" AS ( SELECT "CUSTOMER_CITY",
+  "CUSTOMER_STATE",
+  "CUSTOMER_STREET",
+  "CUSTOMER_ZIPCODE",
+  "CUSTOMER_ID",
+  "CATEGORY_NAME_STATS_MODE",
+  "CATEGORY__COUNT_DISTINCT",
+  "DEPARTMEN_COUNT_DISTINCT",
+  "DEPARTMENT_NA_STATS_MODE",
+  "ORDER_ID_COUNT_DISTINCT",
+  "ORDER_ITEM_PRODUCT_P_MIN",
+  "ORDER_ITEM_PRODUCT_P_MAX",
+  "ORDER_ITEM_PRODUCT_P_AVG",
+  "ORDER_ITEM_QUANTITY_MIN",
+  "ORDER_ITEM_QUANTITY_MAX",
+  "ORDER_ITEM_QUANTI_MEDIAN",
+  "ORDER_ITEM_SUBTOTAL_SUM",
+  "ORDER_ITEM_SUBTOTAL_AVG",
+  "PRODUCT_D_COUNT_DISTINCT",
+  "PRODUCT_DESCR_STATS_MODE",
+  "PRODUCT_N_COUNT_DISTINCT",
+  "PRODUCT_NAME_STATS_MODE",
+  "COMPLETE_FLAG",CASE WHEN "COMPLETE_FLAG" &gt; 2 THEN 1 ELSE 0 END as "TARGET" FROM {INPUT_SOURCE} ) </SQLExpression>
+            <TransformationSourceAttributes>
+                <TransformationSourceAttributeType Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="CATEGORY_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="DEPARTMENT_NA_STATS_MODE" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ID_COUNT_DISTINCT" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_SUBTOTAL_SUM" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="PRODUCT_D_COUNT_DISTINCT" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="PRODUCT_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+                <TransformationSourceAttributeType Name="COMPLETE_FLAG" DataType="NUMBER" Status="Valid">
+                    <IsOutput>true</IsOutput>
+                </TransformationSourceAttributeType>
+            </TransformationSourceAttributes>
+            <TransformedAttributes>
+                <MapTransformedSourceType>
+                    <key Name="TARGET" DataType="NUMBER" Status="Valid">
+                        <IsOutput>true</IsOutput>
+                        <TransformationElementType>
+                            <CustomTransformationEx>CASE WHEN "COMPLETE_FLAG" &gt; 2 THEN 1 ELSE 0 END</CustomTransformationEx>
+                        </TransformationElementType>
+                        <Modified>false</Modified>
+                    </key>
+                    <StringCollectionNames/>
+                </MapTransformedSourceType>
+            </TransformedAttributes>
+            <DataProfileSettings>
+                <NumericalBins>10</NumericalBins>
+                <CategoricalBins>10</CategoricalBins>
+                <DateBins>10</DateBins>
+            </DataProfileSettings>
+            <SampleSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <Random Seed="12345"/>
+                </Method>
+                <OutputTable Name="ODMR$16_01_11_817746JJPJYNF" CreationDate="2017-07-20T16:01:28"/>
+            </SampleSettings>
+            
+            <StatsSelection percentdistinct="true" percentnull="true" max="true" min="true" avg="true" std="true" var="true" kurtosis="false" median="true" skewness="false" mode="true" modesampled="true" modeall="false" histogram="true" rowcount="2008"/>
+        </Transformation>
+        <Join UseCartesian="false" Id="10007" Name="Item Product" Status="Complete">
+            <Icon XCOORD="371" YCOORD="251"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10007" as (SELECT 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_PRICE"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_ORDER_ID"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_ID"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_QUANTITY"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_SUBTOTAL"
+, "RETAIL_PRODUCTS"."PRODUCT_DESCRIPTION"
+, "RETAIL_PRODUCTS"."PRODUCT_PRICE"
+, "RETAIL_PRODUCTS"."PRODUCT_CATEGORY_ID"
+, "RETAIL_PRODUCTS"."PRODUCT_NAME"
+, "RETAIL_PRODUCTS"."PRODUCT_IMAGE"
+
+FROM
+{INPUT_SOURCE:10005} "RETAIL_ORDER_ITEMS"
+LEFT OUTER JOIN {INPUT_SOURCE:10006} "RETAIL_PRODUCTS"
+ON "RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_ID" = "RETAIL_PRODUCTS"."PRODUCT_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Left Outer">
+                    <LeftColumn NodeId="10005" NodeName="RETAIL_ORDER_ITEMS" Key="Yes" Name="ORDER_ITEM_PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10006" NodeName="RETAIL_PRODUCTS" Key="Yes" Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Join UseCartesian="false" Id="10010" Name="Product Category" Status="Complete">
+            <Icon XCOORD="506" YCOORD="251"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10010" as (SELECT 
+"Item Product"."ORDER_ITEM_PRODUCT_PRICE"
+, "Item Product"."ORDER_ITEM_ORDER_ID"
+, "Item Product"."ORDER_ITEM_ID"
+, "Item Product"."ORDER_ITEM_QUANTITY"
+, "Item Product"."ORDER_ITEM_SUBTOTAL"
+, "Item Product"."PRODUCT_DESCRIPTION"
+, "Item Product"."PRODUCT_PRICE"
+, "Item Product"."PRODUCT_NAME"
+, "Item Product"."PRODUCT_IMAGE"
+, "RETAIL_CATEGORIES"."CATEGORY_NAME"
+, "RETAIL_CATEGORIES"."CATEGORY_DEPARTMENT_ID"
+
+FROM
+{INPUT_SOURCE:10007} "Item Product"
+LEFT OUTER JOIN {INPUT_SOURCE:10001} "RETAIL_CATEGORIES"
+ON "Item Product"."PRODUCT_CATEGORY_ID" = "RETAIL_CATEGORIES"."CATEGORY_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Left Outer">
+                    <LeftColumn NodeId="10007" NodeName="Item Product" Key="Yes" Name="PRODUCT_CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10001" NodeName="RETAIL_CATEGORIES" Key="Yes" Name="CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10007" NodeName="Item Product" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10001" NodeName="RETAIL_CATEGORIES" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10001" NodeName="RETAIL_CATEGORIES" Name="CATEGORY_DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Join UseCartesian="false" Id="10013" Name="Category Dept" Status="Complete">
+            <Icon XCOORD="645" YCOORD="250"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10013" as (SELECT 
+"Product Category"."ORDER_ITEM_PRODUCT_PRICE"
+, "Product Category"."ORDER_ITEM_ORDER_ID"
+, "Product Category"."ORDER_ITEM_ID"
+, "Product Category"."ORDER_ITEM_QUANTITY"
+, "Product Category"."ORDER_ITEM_SUBTOTAL"
+, "Product Category"."PRODUCT_DESCRIPTION"
+, "Product Category"."PRODUCT_PRICE"
+, "Product Category"."PRODUCT_NAME"
+, "Product Category"."PRODUCT_IMAGE"
+, "Product Category"."CATEGORY_NAME"
+, "RETAIL_DEPARTMENTS"."DEPARTMENT_NAME"
+
+FROM
+{INPUT_SOURCE:10010} "Product Category"
+LEFT OUTER JOIN {INPUT_SOURCE:10003} "RETAIL_DEPARTMENTS"
+ON "Product Category"."CATEGORY_DEPARTMENT_ID" = "RETAIL_DEPARTMENTS"."DEPARTMENT_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Left Outer">
+                    <LeftColumn NodeId="10010" NodeName="Product Category" Key="Yes" Name="CATEGORY_DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10003" NodeName="RETAIL_DEPARTMENTS" Key="Yes" Name="DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Product Category" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10003" NodeName="RETAIL_DEPARTMENTS" Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Join UseCartesian="false" Id="10016" Name="Item Order" Status="Complete">
+            <Icon XCOORD="769" YCOORD="251"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10016" as (SELECT 
+"Category Dept"."ORDER_ITEM_PRODUCT_PRICE"
+, "Category Dept"."ORDER_ITEM_ID"
+, "Category Dept"."ORDER_ITEM_QUANTITY"
+, "Category Dept"."ORDER_ITEM_SUBTOTAL"
+, "Category Dept"."PRODUCT_DESCRIPTION"
+, "Category Dept"."PRODUCT_PRICE"
+, "Category Dept"."PRODUCT_NAME"
+, "Category Dept"."PRODUCT_IMAGE"
+, "Category Dept"."CATEGORY_NAME"
+, "Category Dept"."DEPARTMENT_NAME"
+, "Order Date Transform"."ORDER_CUSTOMER_ID"
+, "Order Date Transform"."ORDER_STATUS"
+, "Order Date Transform"."ORDER_TIMESTAMP"
+, "Order Date Transform"."ORDER_ID"
+
+FROM
+{INPUT_SOURCE:10013} "Category Dept"
+INNER JOIN {INPUT_SOURCE:10030} "Order Date Transform"
+ON "Category Dept"."ORDER_ITEM_ORDER_ID" = "Order Date Transform"."ORDER_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Inner">
+                    <LeftColumn NodeId="10013" NodeName="Category Dept" Key="Yes" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10030" NodeName="Order Date Transform" Key="Yes" Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Category Dept" Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10030" NodeName="Order Date Transform" Name="ORDER_CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10030" NodeName="Order Date Transform" Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10030" NodeName="Order Date Transform" Name="ORDER_TIMESTAMP" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                <RefDBColumn NodeId="10030" NodeName="Order Date Transform" Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Join UseCartesian="false" Id="10019" Name="Item Customer" Status="Complete">
+            <Icon XCOORD="907" YCOORD="252"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10019" as (SELECT 
+"Item Order"."ORDER_ITEM_PRODUCT_PRICE"
+, "Item Order"."ORDER_ITEM_ID"
+, "Item Order"."ORDER_ITEM_QUANTITY"
+, "Item Order"."ORDER_ITEM_SUBTOTAL"
+, "Item Order"."PRODUCT_DESCRIPTION"
+, "Item Order"."PRODUCT_PRICE"
+, "Item Order"."PRODUCT_NAME"
+, "Item Order"."PRODUCT_IMAGE"
+, "Item Order"."CATEGORY_NAME"
+, "Item Order"."DEPARTMENT_NAME"
+, "Item Order"."ORDER_STATUS"
+, "Filter Masked Fields"."CUSTOMER_STATE"
+, "Filter Masked Fields"."CUSTOMER_ZIPCODE"
+, "Filter Masked Fields"."CUSTOMER_CITY"
+, "Filter Masked Fields"."CUSTOMER_STREET"
+, "Item Order"."ORDER_TIMESTAMP"
+, "Item Order"."ORDER_ID"
+, "Filter Masked Fields"."CUSTOMER_ID"
+
+FROM
+{INPUT_SOURCE:10016} "Item Order"
+RIGHT OUTER JOIN {INPUT_SOURCE:10034} "Filter Masked Fields"
+ON "Item Order"."ORDER_CUSTOMER_ID" = "Filter Masked Fields"."CUSTOMER_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Right Outer">
+                    <LeftColumn NodeId="10016" NodeName="Item Order" Key="Yes" Name="ORDER_CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10034" NodeName="Filter Masked Fields" Key="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10034" NodeName="Filter Masked Fields" Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10034" NodeName="Filter Masked Fields" Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10034" NodeName="Filter Masked Fields" Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10034" NodeName="Filter Masked Fields" Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="ORDER_TIMESTAMP" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Item Order" Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10034" NodeName="Filter Masked Fields" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Sample Id="10060" Name="Undersampling" Status="Complete">
+            <Icon XCOORD="1539" YCOORD="253"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10060.1" as (SELECT  row_number() OVER(partition by "TARGET" ORDER BY ORA_HASH("CUSTOMER_ID", 4294967295, 12345)) "ODMR$16_10_52_691737YKKWQDN", "CUSTOMER_ID" FROM {INPUT_SOURCE} t), 
+"N$10060.2" as (SELECT  t.*, p."ODMR$16_10_52_691737YKKWQDN" FROM {INPUT_SOURCE} t, "N$10060.1" p WHERE t."CUSTOMER_ID" = p."CUSTOMER_ID"), 
+"N$10060.3" as (SELECT "TARGET" "ODMR$16_10_52_692316ZRBRKLP", COUNT(*) "ODMR$16_10_52_692707AGASBCH", SUM(COUNT(*)) OVER() "ODMR$16_10_52_693018VKYMYHS", COUNT(*) OVER() "ODMR$16_10_52_694161ESPONGS", MIN(COUNT(*)) OVER() "ODMR$16_10_52_694645NIFOTXF" from {INPUT_SOURCE} GROUP BY "TARGET"), 
+"N$10060" as (
+SELECT 
+"CUSTOMER_CITY"
+, "CUSTOMER_STATE"
+, "CUSTOMER_STREET"
+, "CUSTOMER_ZIPCODE"
+, "CUSTOMER_ID"
+, "CATEGORY_NAME_STATS_MODE"
+, "CATEGORY__COUNT_DISTINCT"
+, "DEPARTMEN_COUNT_DISTINCT"
+, "DEPARTMENT_NA_STATS_MODE"
+, "ORDER_ID_COUNT_DISTINCT"
+, "ORDER_ITEM_PRODUCT_P_MIN"
+, "ORDER_ITEM_PRODUCT_P_MAX"
+, "ORDER_ITEM_PRODUCT_P_AVG"
+, "ORDER_ITEM_QUANTITY_MIN"
+, "ORDER_ITEM_QUANTITY_MAX"
+, "ORDER_ITEM_QUANTI_MEDIAN"
+, "ORDER_ITEM_SUBTOTAL_SUM"
+, "ORDER_ITEM_SUBTOTAL_AVG"
+, "PRODUCT_D_COUNT_DISTINCT"
+, "PRODUCT_DESCR_STATS_MODE"
+, "PRODUCT_N_COUNT_DISTINCT"
+, "PRODUCT_NAME_STATS_MODE"
+, "COMPLETE_FLAG"
+, "TARGET"
+FROM "N$10060.2" v1 ,"N$10060.3" v2
+WHERE v1."TARGET" = v2."ODMR$16_10_52_692316ZRBRKLP"
+AND v1."ODMR$16_10_52_691737YKKWQDN" &lt;= LEAST("ODMR$16_10_52_694645NIFOTXF", GREATEST(1, ROUND((60 / 100 * "ODMR$16_10_52_693018VKYMYHS") / "ODMR$16_10_52_694161ESPONGS")))
+)</SQLExpression>
+            <SamplingSettings>
+                <PercentOfTotal>60.0</PercentOfTotal>
+                <Method>
+                    <Stratified TargetAttr="TARGET" DataType="NUMBER" Status="Valid" Type="Balanced" Seed="12345">
+                        <Distributions/>
+                    </Stratified>
+                </Method>
+                <CaseAttribute Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+            </SamplingSettings>
+            <StatisticTable Column="TARGET" Name="ODMR$16_10_52_508094USOWNNT" CreationDate="2017-07-20T16:10:53"/>
+        </Sample>
+        <ColumnFilter Id="10034" Name="Filter Masked Fields" Status="Complete">
+            <Icon XCOORD="1045" YCOORD="357"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10034" as (SELECT 
+"CUSTOMER_CITY",
+"CUSTOMER_STATE",
+"CUSTOMER_STREET",
+"CUSTOMER_ZIPCODE",
+"CUSTOMER_ID"
+FROM {INPUT_SOURCE}
+ )</SQLExpression>
+            <ColumnFilterSettings NumberOfRows="2000">
+                <DataQualitySettings NullsPercent="95.0" UniquePercent="95.0" ConstantPercent="95.0"/>
+                <AttrImportantSettings SamplingType="System" StratifiedCutoff="10"/>
+            </ColumnFilterSettings>
+            <ColumnFilterAttributes AutoSpec="No" AutomaticFilterEnable="No">
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_EMAIL" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_FNAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_LNAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_PASSWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+            </ColumnFilterAttributes>
+            <ColumnFilterResults DataQualityOutput="ODMR$14_19_32_015618IMWVSVI" GenerateImportanceOutput="false">
+                <Attribute Name="CUSTOMER_CITY"/>
+                <Attribute Name="CUSTOMER_EMAIL">
+                    <Reason Type="CONSTANT_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CUSTOMER_FNAME"/>
+                <Attribute Name="CUSTOMER_ID">
+                    <Reason Type="UNIQUE_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CUSTOMER_LNAME"/>
+                <Attribute Name="CUSTOMER_PASSWORD">
+                    <Reason Type="CONSTANT_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CUSTOMER_STATE"/>
+                <Attribute Name="CUSTOMER_STREET"/>
+                <Attribute Name="CUSTOMER_ZIPCODE"/>
+            </ColumnFilterResults>
+        </ColumnFilter>
+        <ColumnFilter Id="10055" Name="Attribute Selection" Status="Complete">
+            <Icon XCOORD="1671" YCOORD="253"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10055" as (SELECT 
+"CATEGORY__COUNT_DISTINCT",
+"CUSTOMER_ID",
+"DEPARTMEN_COUNT_DISTINCT",
+"ORDER_ITEM_PRODUCT_P_AVG",
+"ORDER_ITEM_PRODUCT_P_MAX",
+"ORDER_ITEM_PRODUCT_P_MIN",
+"ORDER_ITEM_QUANTITY_MAX",
+"ORDER_ITEM_QUANTITY_MIN",
+"ORDER_ITEM_QUANTI_MEDIAN",
+"ORDER_ITEM_SUBTOTAL_AVG",
+"PRODUCT_DESCR_STATS_MODE",
+"PRODUCT_N_COUNT_DISTINCT",
+"TARGET"
+FROM {INPUT_SOURCE}
+ )</SQLExpression>
+            <ColumnFilterSettings>
+                <DataQualitySettings/>
+                <AttrImportantSettings CutOff="0.0" TopN="100" SamplingType="System" StratifiedCutoff="10">
+                    <TargetAttribute Name="TARGET" DataType="NUMBER" Status="Valid"/>
+                </AttrImportantSettings>
+            </ColumnFilterSettings>
+            <ColumnFilterAttributes AutoSpec="No" AutomaticFilterEnable="No">
+                <Attribute AutomaticFiltering="false" Output="No" Name="CATEGORY_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="COMPLETE_FLAG" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="DEPARTMENT_NA_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="ORDER_ID_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="ORDER_ITEM_SUBTOTAL_SUM" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="PRODUCT_D_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="PRODUCT_NAME_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="TARGET" DataType="NUMBER" Status="Valid"/>
+            </ColumnFilterAttributes>
+            <ColumnFilterResults AttrImportanceOutput="ODMR$FİLTER_COLUMNS_AI" GenerateImportanceOutput="true">
+                <Attribute Name="CATEGORY_NAME_STATS_MODE">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CATEGORY__COUNT_DISTINCT"/>
+                <Attribute Name="COMPLETE_FLAG"/>
+                <Attribute Name="CUSTOMER_CITY">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CUSTOMER_ID">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CUSTOMER_STATE">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CUSTOMER_STREET">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="CUSTOMER_ZIPCODE">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="DEPARTMENT_NA_STATS_MODE">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="DEPARTMEN_COUNT_DISTINCT"/>
+                <Attribute Name="ORDER_ID_COUNT_DISTINCT"/>
+                <Attribute Name="ORDER_ITEM_PRODUCT_P_AVG"/>
+                <Attribute Name="ORDER_ITEM_PRODUCT_P_MAX"/>
+                <Attribute Name="ORDER_ITEM_PRODUCT_P_MIN"/>
+                <Attribute Name="ORDER_ITEM_QUANTITY_MAX"/>
+                <Attribute Name="ORDER_ITEM_QUANTITY_MIN"/>
+                <Attribute Name="ORDER_ITEM_QUANTI_MEDIAN"/>
+                <Attribute Name="ORDER_ITEM_SUBTOTAL_AVG"/>
+                <Attribute Name="ORDER_ITEM_SUBTOTAL_SUM"/>
+                <Attribute Name="PRODUCT_DESCR_STATS_MODE"/>
+                <Attribute Name="PRODUCT_D_COUNT_DISTINCT">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="PRODUCT_NAME_STATS_MODE">
+                    <Reason Type="CUTOFF_LIMIT"/>
+                </Attribute>
+                <Attribute Name="PRODUCT_N_COUNT_DISTINCT"/>
+                <Attribute Name="TARGET"/>
+            </ColumnFilterResults>
+        </ColumnFilter>
+        <ClassificationBuild Id="10053" Name="Class Build" Status="Ready">
+            <Icon XCOORD="1791" YCOORD="252"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <BuildDataSource SourceId="10055"/>
+            <CaseAttributes>
+                <Attribute Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+            </CaseAttributes>
+            <MiningAttributes AutoSpec="No">
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="TARGET" DataType="NUMBER" Status="Valid"/>
+            </MiningAttributes>
+            <Stoplists>
+                <Stoplist Id="1" Name="Default" Type="Basic" Language="ENGLISH" DBName="">
+                    <StopTokens/>
+                </Stoplist>
+            </Stoplists>
+            <TextSettings TransformType="Token" CategoricalCutOffValue="200">
+                <Token>
+                    <Token MaxNumberPerDoc="50" MaxNumberAllDocs="3000" Frequency="IDF" StoplistId="1" Policy="">
+                        <Lexer Name="" Type="Basic">
+                            <Settings>
+                                <Attribute Name="index_stems" ValueString="ENGLISH" Type="String"/>
+                            </Settings>
+                        </Lexer>
+                        <Languages>
+                            <Language Name="TURKISH" Type="SingleByte"/>
+                        </Languages>
+                    </Token>
+                </Token>
+                <Theme Type="Single">
+                    <Token MaxNumberPerDoc="50" MaxNumberAllDocs="3000" Frequency="IDF" StoplistId="1" Policy="">
+                        <Lexer Type="Basic">
+                            <Settings>
+                                <Attribute Name="index_themes" ValueString="YES" Type="String"/>
+                                <Attribute Name="theme_language" ValueString="ENGLISH" Type="String"/>
+                            </Settings>
+                        </Lexer>
+                        <Languages>
+                            <Language Name="ENGLISH" Type="SingleByte"/>
+                        </Languages>
+                    </Token>
+                </Theme>
+            </TextSettings>
+            <TextAttributes/>
+            <TestDataSource>
+                <SplitData TestPercent="40.0" DataFormat="Table"/>
+            </TestDataSource>
+            <TargetAttribute Name="TARGET" DataType="NUMBER" Status="Valid"/>
+            <Models>
+                <NaiveBayesModel Id="10049" Name="CLAS_NB_1_17" Status="Complete" CreationDate="2017-07-20T16:27:06" Annotation="" UseForOutput="true">
+                    <InputMiningData DataUsage="AUTO" MiningUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="TARGET" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$16_26_52_446646VAUJCAF"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <NaiveBayesAlgo>
+                        <NABS_PAIRWISE_THRESHOLD>0.0</NABS_PAIRWISE_THRESHOLD>
+                        <NABS_SINGLETON_THRESHOLD>0.0</NABS_SINGLETON_THRESHOLD>
+                    </NaiveBayesAlgo>
+                </NaiveBayesModel>
+                <DecisionTreeModel Id="10050" Name="CLAS_DT_1_17" Status="Complete" CreationDate="2017-07-20T16:27:07" Annotation="" UseForOutput="true">
+                    <InputMiningData DataUsage="AUTO" MiningUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="TARGET" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$16_26_52_420994RGPAQBW"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <DecisionTreeAlgo>
+                        <TREE_IMPURITY_METRIC>TREE_IMPURITY_GINI</TREE_IMPURITY_METRIC>
+                        <TREE_TERM_MAX_DEPTH>7</TREE_TERM_MAX_DEPTH>
+                        <TREE_TERM_MINPCT_NODE>0.05</TREE_TERM_MINPCT_NODE>
+                        <TREE_TERM_MINPCT_SPLIT>0.1</TREE_TERM_MINPCT_SPLIT>
+                        <TREE_TERM_MINREC_NODE>10</TREE_TERM_MINREC_NODE>
+                        <TREE_TERM_MINREC_SPLIT>20</TREE_TERM_MINREC_SPLIT>
+                    </DecisionTreeAlgo>
+                </DecisionTreeModel>
+                <CSupportVectorMachineModel Id="10051" Name="CLAS_SVM_1_17" Status="Complete" CreationDate="2017-07-20T16:27:06" Annotation="" UseForOutput="true">
+                    <InputMiningData DataUsage="AUTO" MiningUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="TARGET" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$16_26_52_466821MOMMGAI"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <CSupportVectorMachineAlgo>
+                        <SVMS_ACTIVE_LEARNING>SVMS_AL_ENABLE</SVMS_ACTIVE_LEARNING>
+                        <SVMS_CONV_TOLERANCE>0.001</SVMS_CONV_TOLERANCE>
+                    </CSupportVectorMachineAlgo>
+                </CSupportVectorMachineModel>
+                <CGeneralizedLinearModel Id="10052" Name="CLAS_GLM_1_17" Status="Complete" CreationDate="2017-07-20T16:27:07" Annotation="" UseForOutput="true">
+                    <InputMiningData DataUsage="AUTO" MiningUsage="AUTO">
+                        <MiningAttributes>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="DEPARTMEN_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_P_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MIN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY_MAX" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTI_MEDIAN" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_SUBTOTAL_AVG" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="TARGET" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CATEGORY__COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_N_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_DESCR_STATS_MODE" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <Performance>
+                        <Balanced WeightsTable="ODMR$16_26_52_490612CATNMVR"/>
+                    </Performance>
+                    <Tuning>
+                        <None/>
+                    </Tuning>
+                    <CGeneralizedLinearAlgo>
+                        <GLMS_CONF_LEVEL>0.95</GLMS_CONF_LEVEL>
+                        <GLMS_FTR_SELECTION>GLMS_FTR_SELECTION_DISABLE</GLMS_FTR_SELECTION>
+                    </CGeneralizedLinearAlgo>
+                </CGeneralizedLinearModel>
+            </Models>
+            <TestSettings>
+                <TopNTargets Value="5"/>
+            </TestSettings>
+            <Results genAccuracyMetrics="true" genConfusionMatrix="true" genROC="true" genLift="true" genTuning="false">
+                <ClassificationResult ModelId="10050" Status="Complete" Name="CLAS_DT_1_17" CreationDate="2017-07-20T16:27:23">
+                    <TestMetrics Name="ODMR$16_27_20_175339OYXPANS" CreationDate="2017-07-20T16:27:20"/>
+                    <ConfusionMatrix Name="ODMR$16_27_17_741807JJVBTZR" CreationDate="2017-07-20T16:27:20"/>
+                    <Lifts>
+                        <Lift TargetValue="0" Name="ODMR$16_27_21_834303XEKCQAX" CreationDate="2017-07-20T16:27:22"/>
+                        <Lift TargetValue="1" Name="ODMR$16_27_22_313419CKCWUBH" CreationDate="2017-07-20T16:27:22"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" Name="ODMR$16_27_22_669643PMWCHQV" CreationDate="2017-07-20T16:27:23"/>
+                        <ROC TargetValue="1" Name="ODMR$16_27_23_155939XQSAOHF" CreationDate="2017-07-20T16:27:23"/>
+                        <AreaUnderCurve Area="0.7131375670433044" TargetValue="0"/>
+                        <AreaUnderCurve Area="0.7131375670433044" TargetValue="1"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult ModelId="10049" Status="Complete" Name="CLAS_NB_1_17" CreationDate="2017-07-20T16:27:23">
+                    <TestMetrics Name="ODMR$16_27_20_237277OPLXQVG" CreationDate="2017-07-20T16:27:20"/>
+                    <ConfusionMatrix Name="ODMR$16_27_17_754888BQYKWPL" CreationDate="2017-07-20T16:27:20"/>
+                    <Lifts>
+                        <Lift TargetValue="0" Name="ODMR$16_27_20_877134VSQJDXL" CreationDate="2017-07-20T16:27:22"/>
+                        <Lift TargetValue="1" Name="ODMR$16_27_22_440059HDITYVH" CreationDate="2017-07-20T16:27:22"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" Name="ODMR$16_27_22_784653XMZSCKE" CreationDate="2017-07-20T16:27:23"/>
+                        <ROC TargetValue="1" Name="ODMR$16_27_23_262974TKMWNAS" CreationDate="2017-07-20T16:27:23"/>
+                        <AreaUnderCurve Area="0.7132965326309204" TargetValue="0"/>
+                        <AreaUnderCurve Area="0.7130366563796997" TargetValue="1"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult ModelId="10051" Status="Complete" Name="CLAS_SVM_1_17" CreationDate="2017-07-20T16:27:23">
+                    <TestMetrics Name="ODMR$16_27_20_165644WBMATZF" CreationDate="2017-07-20T16:27:20"/>
+                    <ConfusionMatrix Name="ODMR$16_27_17_817913FFWCDGE" CreationDate="2017-07-20T16:27:20"/>
+                    <Lifts>
+                        <Lift TargetValue="0" Name="ODMR$16_27_20_899367XXNILQT" CreationDate="2017-07-20T16:27:22"/>
+                        <Lift TargetValue="1" Name="ODMR$16_27_22_448390XKVWWMW" CreationDate="2017-07-20T16:27:22"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" Name="ODMR$16_27_22_831642WHZWHZG" CreationDate="2017-07-20T16:27:23"/>
+                        <ROC TargetValue="1" Name="ODMR$16_27_23_280735QZOZTDE" CreationDate="2017-07-20T16:27:23"/>
+                        <AreaUnderCurve Area="0.7067814469337463" TargetValue="0"/>
+                        <AreaUnderCurve Area="0.7067756652832031" TargetValue="1"/>
+                    </ROCs>
+                </ClassificationResult>
+                <ClassificationResult ModelId="10052" Status="Complete" Name="CLAS_GLM_1_17" CreationDate="2017-07-20T16:27:24">
+                    <TestMetrics Name="ODMR$16_27_20_454187CJJRZSB" CreationDate="2017-07-20T16:27:20"/>
+                    <ConfusionMatrix Name="ODMR$16_27_17_617695ZJDKJZC" CreationDate="2017-07-20T16:27:20"/>
+                    <Lifts>
+                        <Lift TargetValue="0" Name="ODMR$16_27_21_042269RHWXWFF" CreationDate="2017-07-20T16:27:22"/>
+                        <Lift TargetValue="1" Name="ODMR$16_27_22_509360RMYSEMR" CreationDate="2017-07-20T16:27:22"/>
+                    </Lifts>
+                    <ROCs>
+                        <ROC TargetValue="0" Name="ODMR$16_27_22_939559JEFIPEK" CreationDate="2017-07-20T16:27:23"/>
+                        <ROC TargetValue="1" Name="ODMR$16_27_23_431831MCJQTGE" CreationDate="2017-07-20T16:27:23"/>
+                        <AreaUnderCurve Area="0.7319291234016418" TargetValue="0"/>
+                        <AreaUnderCurve Area="0.7319127321243286" TargetValue="1"/>
+                    </ROCs>
+                </ClassificationResult>
+            </Results>
+        </ClassificationBuild>
+        <AssociationBuild MaxDistinctItemValue="10" Id="10041" Name="Frequent Items" Status="Complete">
+            <Icon XCOORD="988" YCOORD="134"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <BuildDataSource SourceId="10019"/>
+            <CaseAttributes>
+                <Attribute Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+            </CaseAttributes>
+            <MiningAttributes AutoSpec="Yes">
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_TIMESTAMP" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+            </MiningAttributes>
+            <ItemID Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+            <Models>
+                <AprioriModel Id="10040" Name="ASSOC_AP_1_17" Status="Complete" CreationDate="2017-07-21T04:28:24" Annotation="" UseForOutput="true">
+                    <InputMiningData DataUsage="MANUAL" MiningUsage="MANUAL">
+                        <MiningAttributes>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_TIMESTAMP" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Categorical" Input="Yes" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                            <MiningAttribute AutoPrep="Yes" MiningType="Numerical" Input="Yes" Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                        </MiningAttributes>
+                    </InputMiningData>
+                    <AprioriAlgo>
+                        <ASSO_MAX_RULE_LENGTH>3</ASSO_MAX_RULE_LENGTH>
+                        <ASSO_MIN_CONFIDENCE>0.1</ASSO_MIN_CONFIDENCE>
+                        <ASSO_MIN_SUPPORT>0.01</ASSO_MIN_SUPPORT>
+                    </AprioriAlgo>
+                </AprioriModel>
+            </Models>
+        </AssociationBuild>
+    </Nodes>
+    <Links>
+        <Link Id="10008" From="10005" To="10007" Name="Link" Label="From &quot;RETAIL_ORDER_ITEMS&quot; to &quot;Item Product&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10009" From="10006" To="10007" Name="Link" Label="From &quot;RETAIL_PRODUCTS&quot; to &quot;Item Product&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10011" From="10007" To="10010" Name="Link" Label="From &quot;Item Product&quot; to &quot;Product Category&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10012" From="10001" To="10010" Name="Link" Label="From &quot;RETAIL_CATEGORIES&quot; to &quot;Product Category&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10014" From="10010" To="10013" Name="Link" Label="From &quot;Product Category&quot; to &quot;Category Dept&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10015" From="10003" To="10013" Name="Link" Label="From &quot;RETAIL_DEPARTMENTS&quot; to &quot;Category Dept&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10017" From="10013" To="10016" Name="Link" Label="From &quot;Category Dept&quot; to &quot;Item Order&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10020" From="10016" To="10019" Name="Link" Label="From &quot;Item Order&quot; to &quot;Item Customer&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10026" From="10005" To="10025" Name="Link" Label="From &quot;RETAIL_ORDER_ITEMS&quot; to &quot;Retail Order Item Explore&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10031" From="10004" To="10030" Name="Link" Label="From &quot;RETAIL_ORDERS&quot; to &quot;Order Date Transform&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10032" From="10030" To="10029" Name="Link" Label="From &quot;Order Date Transform&quot; to &quot;Retail Orders Explore&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10033" From="10030" To="10016" Name="Link" Label="From &quot;Order Date Transform&quot; to &quot;Item Order&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10035" From="10002" To="10034" Name="Link" Label="From &quot;RETAIL_CUSTOMERS&quot; to &quot;Filter Masked Fields&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10036" From="10034" To="10027" Name="Link" Label="From &quot;Filter Masked Fields&quot; to &quot;Retail Customers Explore&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10037" From="10034" To="10019" Name="Link" Label="From &quot;Filter Masked Fields&quot; to &quot;Item Customer&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10039" From="10019" To="10038" Name="Link" Label="From &quot;Item Customer&quot; to &quot;Customer Based DM&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10042" From="10019" To="10041" Name="Link" Label="From &quot;Item Customer&quot; to &quot;Frequent Items&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10044" From="10038" To="10043" Name="Link" Label="From &quot;Customer Based DM&quot; to &quot;RETAIL_CUSTOMER_DM&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10046" From="10043" To="10045" Name="Link" Label="From &quot;RETAIL_CUSTOMER_DM&quot; to &quot;Complete vs Order Cnt&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10048" From="10043" To="10047" Name="Link" Label="From &quot;RETAIL_CUSTOMER_DM&quot; to &quot;Target Variable&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10057" From="10055" To="10053" Name="Link" Label="From &quot;Attribute Selection&quot; to &quot;Class Build&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10059" From="10047" To="10058" Name="Link" Label="From &quot;Target Variable&quot; to &quot;Target Distribution&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10061" From="10047" To="10060" Name="Link" Label="From &quot;Target Variable&quot; to &quot;Undersampling&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10062" From="10060" To="10055" Name="Link" Label="From &quot;Undersampling&quot; to &quot;Attribute Selection&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+    </Links>
+</WorkflowProcess>

@@ -1,0 +1,81 @@
+
+Oracle Distribution of R version 3.2.0  (--) -- "Full of Ingredients"
+Copyright (C)  The R Foundation for Statistical Computing
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+You are using Oracle's distribution of R. Please contact
+Oracle Support for any problems you encounter with this
+distribution.
+
+> #source(echo = TRUE)
+> library(ROracle)
+Loading required package: DBI
+> 
+> drv <- dbDriver("Oracle")
+> host <- "localhost"
+> port <- 1521
+> sid <- "ORCL"
+> connect.string <- paste(
++             "(DESCRIPTION=",
++             "(ADDRESS=(PROTOCOL=tcp)(HOST=", host, ")(PORT=", port, "))",
++             "(CONNECT_DATA=(SID=", sid, ")))", sep = "")
+> 
+> constraint.table <- "CONSTRAINT \"ST_JSON_CHECK\" CHECK (doc IS JSON) ENABLE"
+> conn <- dbConnect(drv, username = "odmuser", password = "welcome1",dbname = connect.string)
+> 
+> if(dbExistsTable(conn,"JSON_TMP")){
++   dbRemoveTable(conn,"JSON_TMP")
++ }
+> 
+> path <- 'stocks.json'
+> data <- readLines(path)
+> wb.json.df <- data.frame(DOC = data)
+> attr(wb.json.df$DOC,"ora.type") <- "clob"
+> dbWriteTable(conn,"JSON_TMP",wb.json.df)
+[1] TRUE
+> 
+> if(dbExistsTable(conn,"STOCK_JSON")){
++   dbRemoveTable(conn,"STOCK_JSON")
++ }
+> 
+> create.stmt <- paste("CREATE TABLE STOCK_JSON(DOC CLOB ",constraint.table," )",sep="")
+> qry <- dbSendQuery(conn,create.stmt)
+> execute(qry)
+NULL
+> 
+> insert.stmt <- "INSERT INTO STOCK_JSON SELECT DOC FROM JSON_TMP"
+> qry <- dbSendQuery(conn,insert.stmt)
+> execute(qry)
+NULL
+> qry <- dbSendQuery(conn,"COMMIT")
+> execute(qry)
+NULL
+> 
+> 
+> if(dbExistsTable(conn,"JSON_TMP")){
++   dbRemoveTable(conn,"JSON_TMP")
++ }
+[1] TRUE
+> 
+> 
+> dbDisconnect(conn)
+[1] TRUE
+> 
+> 
+> proc.time()
+   user  system elapsed 
+  4.908   0.378  40.424 

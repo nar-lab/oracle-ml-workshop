@@ -1,0 +1,959 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkflowProcess Version="12.1.0.2.3" DBVersion="12.1.0.2.0" Schema="ZIRAAT" xmlns="http://xmlns.oracle.com/odmr11">
+    <Nodes>
+        <DataSource Id="10001" Name="WORLDBANK_JSON" Status="Complete">
+            <Icon XCOORD="285" YCOORD="118"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10001" as (select "WORLDBANK_JSON"."DOC" 
+from "ZIRAAT"."WORLDBANK_JSON"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="DOC" DataType="CLOB" Status="Valid" DataTypeQualifier="JSON"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="WORLDBANK_JSON" Synonym="false"/>
+            <JSONColumns>
+                <Attribute Name="DOC">
+                    <DataGuideInfo Status="Complete" Generate="DEFAULT">
+                        <System DataGuideTable="ODMR$18_43_54_880406RQGJVYV" NumValuesProcessed="110788">
+                            <DataGuide>
+                                <Item>
+                                    <Path>$."_id"</Path>
+                                    <Type>OBJECT</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."_id"."$oid"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."approvalfy"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."board_approval_month"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."boardapprovaldate"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."borrower"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."closingdate"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."country_namecode"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."countrycode"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."countryname"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."countryshortname"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."docty"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."envassesmentcategorycode"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."grantamt"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."ibrdcommamt"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."id"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."idacommamt"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."impagency"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."lendinginstr"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."lendinginstrtype"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."lendprojectcost"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."majorsector_percent"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."majorsector_percent"."Name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."majorsector_percent"."Percent"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjsector_namecode"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjsector_namecode"."code"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjsector_namecode"."name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjtheme"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjtheme_namecode"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjtheme_namecode"."code"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjtheme_namecode"."name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."mjthemecode"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."prodline"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."prodlinetext"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."productlinetype"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."project_abstract"</Path>
+                                    <Type>OBJECT</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."project_abstract"."cdata"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."project_name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectdocs"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectdocs"."DocDate"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectdocs"."DocType"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectdocs"."DocTypeDesc"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectdocs"."DocURL"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectdocs"."EntityID"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectfinancialtype"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."projectstatusdisplay"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."regionname"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector"."Name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector1"</Path>
+                                    <Type>OBJECT</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector1"."Name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector1"."Percent"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector2"</Path>
+                                    <Type>OBJECT</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector2"."Name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector2"."Percent"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector3"</Path>
+                                    <Type>OBJECT</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector3"."Name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector3"."Percent"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector4"</Path>
+                                    <Type>OBJECT</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector4"."Name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector4"."Percent"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector_namecode"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector_namecode"."code"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sector_namecode"."name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."sectorcode"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."source"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."status"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."supplementprojectflg"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."theme1"</Path>
+                                    <Type>OBJECT</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."theme1"."Name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."theme1"."Percent"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."theme_namecode"</Path>
+                                    <Type>ARRAY</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."theme_namecode"."code"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."theme_namecode"."name"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."themecode"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."totalamt"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."totalcommamt"</Path>
+                                    <Type>NUMBER</Type>
+                                </Item>
+                                <Item>
+                                    <Path>$."url"</Path>
+                                    <Type>STRING</Type>
+                                </Item>
+                            </DataGuide>
+                        </System>
+                    </DataGuideInfo>
+                </Attribute>
+            </JSONColumns>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <RowFilter Id="10008" Name="Filter Rows" Status="Complete">
+            <Icon XCOORD="545" YCOORD="118"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10008" as (SELECT 
+"NAME10" "THEMENAMECODE_NAME"
+, "CODE" "MJNAMECODE_CODE"
+, "MJTHEMECODE" "MJTHEMECODE"
+, "NAME3" "SECTOR1_NAME"
+, "BOARD_APPROVAL_MONTH" "BOARD_APPROVAL_MONTH"
+, "İD" "ID"
+, "İMPAGENCY" "IMPAGENCY"
+, "NAME1" "MJNAMECODE_NAME"
+, "NAME2" "MJTNAMECODE_NAME"
+, "SOURCE" "SOURCE"
+, "DOCDATE" "DOCDATE"
+, "$OİD" "OID"
+, "DOCTYPE" "DOCTYPE"
+, "PRODLİNETEXT" "PRODLINETEXT"
+, "DOCTYPEDESC" "DOCTYPEDESC"
+, "NAME" "MAJORSECTOR_NAME"
+, "NAME4" "SECTOR2_NAME"
+, "CODE3" "THNAMECODE_CODE"
+, "PERCENT3" "SECTOR3_PERCENT"
+, "CDATA" "CDATA"
+, "CODE1" "MJTNAMECODE_CODE"
+, "URL" "URL"
+, "NAME6" "SECTOR4_NAME"
+, "BOARDAPPROVALDATE" "BOARDAPPROVALDATE"
+, "PERCENT5" "THEME_PERCENT"
+, "BORROWER" "BORROWER"
+, "PERCENT" "MAJORSECTOR_PERCENT"
+, "SUPPLEMENTPROJECTFLG" "SUPPLEMENTPROJECTFLG"
+, "LENDİNGİNSTRTYPE" "LENDINGINSTRTYPE"
+, "MJTHEME" "MJTHEME"
+, "LENDİNGİNSTR" "LENDINGINSTR"
+, "THEMECODE" "THEMECODE"
+, "COUNTRY_NAMECODE" "COUNTRY_NAMECODE"
+, "TOTALAMT" "TOTALAMT"
+, "DOCURL" "DOCURL"
+, "APPROVALFY" "APPROVALFY"
+, "GRANTAMT" "GRANTAMT"
+, "COUNTRYSHORTNAME" "COUNTRYSHORTNAME"
+, "İBRDCOMMAMT" "IBRDCOMMAMT"
+, "DOCTY" "DOCTY"
+, "PERCENT1" "SECTOR1_PERCENT"
+, "PERCENT4" "SECTOR4_PERCENT"
+, "ENTİTYID" "ENTITYID"
+, "LENDPROJECTCOST" "LENDPROJECTCOST"
+, "COUNTRYNAME" "COUNTRYNAME"
+, "NAME5" "SECTOR3_NAME"
+, "CODE2" "SECNAMECODE_CODE"
+, "PROJECTSTATUSDİSPLAY" "PROJECTSTATUSDISPLAY"
+, "NAME7" "SECTOR5_NAME"
+, "PROJECT_NAME" "PROJECT_NAME"
+, "SECTORCODE" "SECTORCODE"
+, "PRODUCTLİNETYPE" "PRODUCTLINETYPE"
+, "PROJECTFİNANCİALTYPE" "PROJECTFINANCIALTYPE"
+, "İDACOMMAMT" "IDACOMMAMT"
+, "NAME8" "SECTORNAMECODE_NAME"
+, "NAME9" "THEME_NAME"
+, "REGİONNAME" "REGIONNAME"
+, "TOTALCOMMAMT" "TOTALCOMMAMT"
+, "PERCENT2" "SECTOR2_PERCENT"
+, "STATUS" "STATUS"
+, "CLOSİNGDATE" "CLOSINGDATE"
+, "ENVASSESMENTCATEGORYCODE" "ENVASSESMENTCATEGORYCODE"
+, "COUNTRYCODE" "COUNTRYCODE"
+, "PRODLİNE" "PRODLINE"
+
+FROM
+{INPUT_SOURCE}
+ )</SQLExpression>
+            <OutputColumns>
+                <Attribute Name="NAME10" DataType="VARCHAR2" Status="Valid" Alias="THEMENAMECODE_NAME"/>
+                <Attribute Name="CODE" DataType="VARCHAR2" Status="Valid" Alias="MJNAMECODE_CODE"/>
+                <Attribute Name="MJTHEMECODE" DataType="VARCHAR2" Status="Valid" Alias="MJTHEMECODE"/>
+                <Attribute Name="NAME3" DataType="VARCHAR2" Status="Valid" Alias="SECTOR1_NAME"/>
+                <Attribute Name="BOARD_APPROVAL_MONTH" DataType="VARCHAR2" Status="Valid" Alias="BOARD_APPROVAL_MONTH"/>
+                <Attribute Name="İD" DataType="VARCHAR2" Status="Valid" Alias="ID"/>
+                <Attribute Name="İMPAGENCY" DataType="VARCHAR2" Status="Valid" Alias="IMPAGENCY"/>
+                <Attribute Name="NAME1" DataType="VARCHAR2" Status="Valid" Alias="MJNAMECODE_NAME"/>
+                <Attribute Name="NAME2" DataType="VARCHAR2" Status="Valid" Alias="MJTNAMECODE_NAME"/>
+                <Attribute Name="SOURCE" DataType="VARCHAR2" Status="Valid" Alias="SOURCE"/>
+                <Attribute Name="DOCDATE" DataType="VARCHAR2" Status="Valid" Alias="DOCDATE"/>
+                <Attribute Name="$OİD" DataType="VARCHAR2" Status="Valid" Alias="OID"/>
+                <Attribute Name="DOCTYPE" DataType="VARCHAR2" Status="Valid" Alias="DOCTYPE"/>
+                <Attribute Name="PRODLİNETEXT" DataType="VARCHAR2" Status="Valid" Alias="PRODLINETEXT"/>
+                <Attribute Name="DOCTYPEDESC" DataType="VARCHAR2" Status="Valid" Alias="DOCTYPEDESC"/>
+                <Attribute Name="NAME" DataType="VARCHAR2" Status="Valid" Alias="MAJORSECTOR_NAME"/>
+                <Attribute Name="NAME4" DataType="VARCHAR2" Status="Valid" Alias="SECTOR2_NAME"/>
+                <Attribute Name="CODE3" DataType="VARCHAR2" Status="Valid" Alias="THNAMECODE_CODE"/>
+                <Attribute Name="PERCENT3" DataType="NUMBER" Status="Valid" Alias="SECTOR3_PERCENT"/>
+                <Attribute Name="CDATA" DataType="VARCHAR2" Status="Valid" Alias="CDATA"/>
+                <Attribute Name="CODE1" DataType="VARCHAR2" Status="Valid" Alias="MJTNAMECODE_CODE"/>
+                <Attribute Name="URL" DataType="VARCHAR2" Status="Valid" Alias="URL"/>
+                <Attribute Name="NAME6" DataType="VARCHAR2" Status="Valid" Alias="SECTOR4_NAME"/>
+                <Attribute Name="BOARDAPPROVALDATE" DataType="VARCHAR2" Status="Valid" Alias="BOARDAPPROVALDATE"/>
+                <Attribute Name="PERCENT5" DataType="NUMBER" Status="Valid" Alias="THEME_PERCENT"/>
+                <Attribute Name="BORROWER" DataType="VARCHAR2" Status="Valid" Alias="BORROWER"/>
+                <Attribute Name="PERCENT" DataType="NUMBER" Status="Valid" Alias="MAJORSECTOR_PERCENT"/>
+                <Attribute Name="SUPPLEMENTPROJECTFLG" DataType="VARCHAR2" Status="Valid" Alias="SUPPLEMENTPROJECTFLG"/>
+                <Attribute Name="LENDİNGİNSTRTYPE" DataType="VARCHAR2" Status="Valid" Alias="LENDINGINSTRTYPE"/>
+                <Attribute Name="MJTHEME" DataType="VARCHAR2" Status="Valid" Alias="MJTHEME"/>
+                <Attribute Name="LENDİNGİNSTR" DataType="VARCHAR2" Status="Valid" Alias="LENDINGINSTR"/>
+                <Attribute Name="THEMECODE" DataType="VARCHAR2" Status="Valid" Alias="THEMECODE"/>
+                <Attribute Name="COUNTRY_NAMECODE" DataType="VARCHAR2" Status="Valid" Alias="COUNTRY_NAMECODE"/>
+                <Attribute Name="TOTALAMT" DataType="NUMBER" Status="Valid" Alias="TOTALAMT"/>
+                <Attribute Name="DOCURL" DataType="VARCHAR2" Status="Valid" Alias="DOCURL"/>
+                <Attribute Name="APPROVALFY" DataType="VARCHAR2" Status="Valid" Alias="APPROVALFY"/>
+                <Attribute Name="GRANTAMT" DataType="NUMBER" Status="Valid" Alias="GRANTAMT"/>
+                <Attribute Name="COUNTRYSHORTNAME" DataType="VARCHAR2" Status="Valid" Alias="COUNTRYSHORTNAME"/>
+                <Attribute Name="İBRDCOMMAMT" DataType="NUMBER" Status="Valid" Alias="IBRDCOMMAMT"/>
+                <Attribute Name="DOCTY" DataType="VARCHAR2" Status="Valid" Alias="DOCTY"/>
+                <Attribute Name="PERCENT1" DataType="NUMBER" Status="Valid" Alias="SECTOR1_PERCENT"/>
+                <Attribute Name="PERCENT4" DataType="NUMBER" Status="Valid" Alias="SECTOR4_PERCENT"/>
+                <Attribute Name="ENTİTYID" DataType="VARCHAR2" Status="Valid" Alias="ENTITYID"/>
+                <Attribute Name="LENDPROJECTCOST" DataType="NUMBER" Status="Valid" Alias="LENDPROJECTCOST"/>
+                <Attribute Name="COUNTRYNAME" DataType="VARCHAR2" Status="Valid" Alias="COUNTRYNAME"/>
+                <Attribute Name="NAME5" DataType="VARCHAR2" Status="Valid" Alias="SECTOR3_NAME"/>
+                <Attribute Name="CODE2" DataType="VARCHAR2" Status="Valid" Alias="SECNAMECODE_CODE"/>
+                <Attribute Name="PROJECTSTATUSDİSPLAY" DataType="VARCHAR2" Status="Valid" Alias="PROJECTSTATUSDISPLAY"/>
+                <Attribute Name="NAME7" DataType="VARCHAR2" Status="Valid" Alias="SECTOR5_NAME"/>
+                <Attribute Name="PROJECT_NAME" DataType="VARCHAR2" Status="Valid" Alias="PROJECT_NAME"/>
+                <Attribute Name="SECTORCODE" DataType="VARCHAR2" Status="Valid" Alias="SECTORCODE"/>
+                <Attribute Name="PRODUCTLİNETYPE" DataType="VARCHAR2" Status="Valid" Alias="PRODUCTLINETYPE"/>
+                <Attribute Name="PROJECTFİNANCİALTYPE" DataType="VARCHAR2" Status="Valid" Alias="PROJECTFINANCIALTYPE"/>
+                <Attribute Name="İDACOMMAMT" DataType="NUMBER" Status="Valid" Alias="IDACOMMAMT"/>
+                <Attribute Name="NAME8" DataType="VARCHAR2" Status="Valid" Alias="SECTORNAMECODE_NAME"/>
+                <Attribute Name="NAME9" DataType="VARCHAR2" Status="Valid" Alias="THEME_NAME"/>
+                <Attribute Name="REGİONNAME" DataType="VARCHAR2" Status="Valid" Alias="REGIONNAME"/>
+                <Attribute Name="TOTALCOMMAMT" DataType="NUMBER" Status="Valid" Alias="TOTALCOMMAMT"/>
+                <Attribute Name="PERCENT2" DataType="NUMBER" Status="Valid" Alias="SECTOR2_PERCENT"/>
+                <Attribute Name="STATUS" DataType="VARCHAR2" Status="Valid" Alias="STATUS"/>
+                <Attribute Name="CLOSİNGDATE" DataType="VARCHAR2" Status="Valid" Alias="CLOSINGDATE"/>
+                <Attribute Name="ENVASSESMENTCATEGORYCODE" DataType="VARCHAR2" Status="Valid" Alias="ENVASSESMENTCATEGORYCODE"/>
+                <Attribute Name="COUNTRYCODE" DataType="VARCHAR2" Status="Valid" Alias="COUNTRYCODE"/>
+                <Attribute Name="PRODLİNE" DataType="VARCHAR2" Status="Valid" Alias="PRODLINE"/>
+            </OutputColumns>
+        </RowFilter>
+        <SQLQuery HasWithClause="false" GenerateView="false" ViewName="OUTPUT_2_16" Id="10010" Name="SQL Query" Status="Invalid">
+            <Icon XCOORD="664" YCOORD="118"></Icon>
+            <Messages>
+                <Message Type="WARNING">
+                    <Resource Id="SQL_QUERY_NO_OUTPUT">
+                        <Parameters/>
+                    </Resource>
+                </Message>
+            </Messages>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"Filter Rows_N$10008" as (SELECT * FROM {INPUT_SOURCE:10008}),
+"N$10010" as (select * from table(
+rqTableEval(
+  cursor(select "TOTALAMT" from "Filter Rows_N$10008"), 
+  null, 
+  'PNG',
+  'RQG$hist'
+) 
+))
+</SQLExpression>
+            <SQLQueryExpression>select * from table(
+rqTableEval(
+  cursor(select "TOTALAMT" from "Filter Rows_N$10008"), 
+  null, 
+  'PNG',
+  'RQG$hist'
+) 
+)</SQLQueryExpression>
+            <SQLQueryOutputColumns/>
+        </SQLQuery>
+        <JSONQuery Id="10002" Name="JSON Query" Status="Complete">
+            <Icon XCOORD="424" YCOORD="118"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+                <OutputTable Name="ODMR$18_44_52_088088RHUWJQA" CreationDate="2017-07-13T18:44:55"/>
+            </CacheSettings>
+            <SQLExpression>"N$10002_1" as (SELECT 
+t1."CODE1", 
+t1."BOARDAPPROVALDATE", 
+t1."MJTHEMECODE", 
+t1."$OİD", 
+t1."PERCENT3", 
+t1."BORROWER", 
+t1."APPROVALFY", 
+t1."STATUS", 
+t1."NAME9", 
+t1."LENDPROJECTCOST", 
+t1."COUNTRYSHORTNAME", 
+t1."DOCDATE", 
+t1."PRODLİNE", 
+t1."NAME1", 
+t1."İDACOMMAMT", 
+t1."CODE2", 
+t1."NAME5", 
+t1."DOCTYPE", 
+t1."PERCENT4", 
+t1."CODE", 
+t1."PROJECTSTATUSDİSPLAY", 
+t1."İBRDCOMMAMT", 
+t1."CLOSİNGDATE", 
+t1."CDATA", 
+t1."NAME8", 
+t1."SOURCE", 
+t1."İMPAGENCY", 
+t1."GRANTAMT", 
+t1."NAME4", 
+t1."İD", 
+t1."PRODLİNETEXT", 
+t1."NAME10", 
+t1."PROJECT_NAME", 
+t1."SUPPLEMENTPROJECTFLG", 
+t1."ENVASSESMENTCATEGORYCODE", 
+t1."PERCENT5", 
+t1."TOTALAMT", 
+t1."TOTALCOMMAMT", 
+t1."COUNTRYCODE", 
+t1."PERCENT1", 
+t1."REGİONNAME", 
+t1."LENDİNGİNSTRTYPE", 
+t1."DOCTY", 
+t1."THEMECODE", 
+t1."URL", 
+t1."MJTHEME", 
+t1."NAME3", 
+t1."LENDİNGİNSTR", 
+t1."NAME7", 
+t1."DOCURL", 
+t1."ENTİTYID", 
+t1."PRODUCTLİNETYPE", 
+t1."BOARD_APPROVAL_MONTH", 
+t1."PERCENT2", 
+t1."DOCTYPEDESC", 
+t1."SECTORCODE", 
+t1."PROJECTFİNANCİALTYPE", 
+t1."COUNTRY_NAMECODE", 
+t1."NAME2", 
+t1."NAME", 
+t1."NAME6", 
+t1."COUNTRYNAME", 
+t1."CODE3", 
+t1."PERCENT"
+FROM
+{INPUT_SOURCE} t0, 
+JSON_TABLE ("DOC", '$' COLUMNS
+  NESTED PATH '$."theme_namecode"[*]' COLUMNS (
+    "NAME10" VARCHAR2 PATH '$."name"',
+    "CODE3" VARCHAR2 PATH '$."code"'
+  ),
+  NESTED PATH '$."mjsector_namecode"[*]' COLUMNS (
+    "CODE" VARCHAR2 PATH '$."code"',
+    "NAME1" VARCHAR2 PATH '$."name"'
+  ),
+  "MJTHEMECODE" VARCHAR2 PATH '$."mjthemecode"',
+  NESTED PATH '$."sector"[*]' COLUMNS (
+    "NAME3" VARCHAR2 PATH '$."Name"'
+  ),
+  "BOARD_APPROVAL_MONTH" VARCHAR2 PATH '$."board_approval_month"',
+  "İD" VARCHAR2 PATH '$."id"',
+  "İMPAGENCY" VARCHAR2 PATH '$."impagency"',
+  NESTED PATH '$."mjtheme_namecode"[*]' COLUMNS (
+    "NAME2" VARCHAR2 PATH '$."name"',
+    "CODE1" VARCHAR2 PATH '$."code"'
+  ),
+  "SOURCE" VARCHAR2 PATH '$."source"',
+  NESTED PATH '$."projectdocs"[*]' COLUMNS (
+    "DOCDATE" VARCHAR2 PATH '$."DocDate"',
+    "DOCTYPE" VARCHAR2 PATH '$."DocType"',
+    "DOCTYPEDESC" VARCHAR2 PATH '$."DocTypeDesc"',
+    "DOCURL" VARCHAR2 PATH '$."DocURL"',
+    "ENTİTYID" VARCHAR2 PATH '$."EntityID"'
+  ),
+  "$OİD" VARCHAR2 PATH '$."_id"."$oid"',
+  "PRODLİNETEXT" VARCHAR2 PATH '$."prodlinetext"',
+  NESTED PATH '$."majorsector_percent"[*]' COLUMNS (
+    "NAME" VARCHAR2 PATH '$."Name"',
+    "PERCENT" NUMBER PATH '$."Percent"'
+  ),
+  "NAME4" VARCHAR2 PATH '$."sector1"."Name"',
+  "PERCENT1" NUMBER PATH '$."sector1"."Percent"',
+  "PERCENT3" NUMBER PATH '$."sector3"."Percent"',
+  "NAME6" VARCHAR2 PATH '$."sector3"."Name"',
+  "CDATA" VARCHAR2 PATH '$."project_abstract"."cdata"',
+  "NAME5" VARCHAR2 PATH '$."sector2"."Name"',
+  "PERCENT2" NUMBER PATH '$."sector2"."Percent"',
+  "URL" VARCHAR2 PATH '$."url"',
+  "BOARDAPPROVALDATE" VARCHAR2 PATH '$."boardapprovaldate"',
+  "PERCENT5" NUMBER PATH '$."theme1"."Percent"',
+  "NAME9" VARCHAR2 PATH '$."theme1"."Name"',
+  "BORROWER" VARCHAR2 PATH '$."borrower"',
+  "SUPPLEMENTPROJECTFLG" VARCHAR2 PATH '$."supplementprojectflg"',
+  "LENDİNGİNSTRTYPE" VARCHAR2 PATH '$."lendinginstrtype"',
+  NESTED PATH '$."mjtheme"[*]' COLUMNS (
+    "MJTHEME" VARCHAR2 PATH '$'
+  ),
+  "LENDİNGİNSTR" VARCHAR2 PATH '$."lendinginstr"',
+  "THEMECODE" VARCHAR2 PATH '$."themecode"',
+  "COUNTRY_NAMECODE" VARCHAR2 PATH '$."country_namecode"',
+  NESTED PATH '$."sector_namecode"[*]' COLUMNS (
+    "CODE2" VARCHAR2 PATH '$."code"',
+    "NAME8" VARCHAR2 PATH '$."name"'
+  ),
+  "TOTALAMT" NUMBER PATH '$."totalamt"',
+  "APPROVALFY" VARCHAR2 PATH '$."approvalfy"',
+  "GRANTAMT" NUMBER PATH '$."grantamt"',
+  "COUNTRYSHORTNAME" VARCHAR2 PATH '$."countryshortname"',
+  "İBRDCOMMAMT" NUMBER PATH '$."ibrdcommamt"',
+  "DOCTY" VARCHAR2 PATH '$."docty"',
+  "PERCENT4" NUMBER PATH '$."sector4"."Percent"',
+  "NAME7" VARCHAR2 PATH '$."sector4"."Name"',
+  "LENDPROJECTCOST" NUMBER PATH '$."lendprojectcost"',
+  "COUNTRYNAME" VARCHAR2 PATH '$."countryname"',
+  "PROJECTSTATUSDİSPLAY" VARCHAR2 PATH '$."projectstatusdisplay"',
+  "PROJECT_NAME" VARCHAR2 PATH '$."project_name"',
+  "SECTORCODE" VARCHAR2 PATH '$."sectorcode"',
+  "PRODUCTLİNETYPE" VARCHAR2 PATH '$."productlinetype"',
+  "PROJECTFİNANCİALTYPE" VARCHAR2 PATH '$."projectfinancialtype"',
+  "İDACOMMAMT" NUMBER PATH '$."idacommamt"',
+  "REGİONNAME" VARCHAR2 PATH '$."regionname"',
+  "TOTALCOMMAMT" NUMBER PATH '$."totalcommamt"',
+  "STATUS" VARCHAR2 PATH '$."status"',
+  "CLOSİNGDATE" VARCHAR2 PATH '$."closingdate"',
+  "ENVASSESMENTCATEGORYCODE" VARCHAR2 PATH '$."envassesmentcategorycode"',
+  "COUNTRYCODE" VARCHAR2 PATH '$."countrycode"',
+  "PRODLİNE" VARCHAR2 PATH '$."prodline"'
+) t1
+)
+,
+"N$10002" as (SELECT * FROM "N$10002_1")
+</SQLExpression>
+            <JSONAttributes Source="DOC" DataType="CLOB">
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME10" Status="Valid">
+                    <Path>$."theme_namecode"."name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="CODE" Status="Valid">
+                    <Path>$."mjsector_namecode"."code"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="MJTHEMECODE" Status="Valid">
+                    <Path>$."mjthemecode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME3" Status="Valid">
+                    <Path>$."sector"."Name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="BOARD_APPROVAL_MONTH" Status="Valid">
+                    <Path>$."board_approval_month"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="İD" Status="Valid">
+                    <Path>$."id"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="İMPAGENCY" Status="Valid">
+                    <Path>$."impagency"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME1" Status="Valid">
+                    <Path>$."mjsector_namecode"."name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME2" Status="Valid">
+                    <Path>$."mjtheme_namecode"."name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="SOURCE" Status="Valid">
+                    <Path>$."source"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="MJTHEME_NAMECODE" Status="Valid">
+                    <Path>$."mjtheme_namecode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="DOCDATE" Status="Valid">
+                    <Path>$."projectdocs"."DocDate"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="$OİD" Status="Valid">
+                    <Path>$."_id"."$oid"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="DOCTYPE" Status="Valid">
+                    <Path>$."projectdocs"."DocType"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="PRODLİNETEXT" Status="Valid">
+                    <Path>$."prodlinetext"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="DOCTYPEDESC" Status="Valid">
+                    <Path>$."projectdocs"."DocTypeDesc"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME" Status="Valid">
+                    <Path>$."majorsector_percent"."Name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME4" Status="Valid">
+                    <Path>$."sector1"."Name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="CODE3" Status="Valid">
+                    <Path>$."theme_namecode"."code"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="PERCENT3" Status="Valid">
+                    <Path>$."sector3"."Percent"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="CDATA" Status="Valid">
+                    <Path>$."project_abstract"."cdata"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="CODE1" Status="Valid">
+                    <Path>$."mjtheme_namecode"."code"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="OBJECT" DBDataType="NotApplicable" DBName="SECTOR2" Status="Valid">
+                    <Path>$."sector2"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="URL" Status="Valid">
+                    <Path>$."url"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME6" Status="Valid">
+                    <Path>$."sector3"."Name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="BOARDAPPROVALDATE" Status="Valid">
+                    <Path>$."boardapprovaldate"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="PERCENT5" Status="Valid">
+                    <Path>$."theme1"."Percent"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="BORROWER" Status="Valid">
+                    <Path>$."borrower"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="PERCENT" Status="Valid">
+                    <Path>$."majorsector_percent"."Percent"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="SUPPLEMENTPROJECTFLG" Status="Valid">
+                    <Path>$."supplementprojectflg"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="LENDİNGİNSTRTYPE" Status="Valid">
+                    <Path>$."lendinginstrtype"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="MJTHEME" Status="Valid">
+                    <Path>$."mjtheme"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="LENDİNGİNSTR" Status="Valid">
+                    <Path>$."lendinginstr"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="THEMECODE" Status="Valid">
+                    <Path>$."themecode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="COUNTRY_NAMECODE" Status="Valid">
+                    <Path>$."country_namecode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="SECTOR_NAMECODE" Status="Valid">
+                    <Path>$."sector_namecode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="TOTALAMT" Status="Valid">
+                    <Path>$."totalamt"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="DOCURL" Status="Valid">
+                    <Path>$."projectdocs"."DocURL"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="APPROVALFY" Status="Valid">
+                    <Path>$."approvalfy"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="GRANTAMT" Status="Valid">
+                    <Path>$."grantamt"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="OBJECT" DBDataType="NotApplicable" DBName="SECTOR1" Status="Valid">
+                    <Path>$."sector1"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="COUNTRYSHORTNAME" Status="Valid">
+                    <Path>$."countryshortname"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="MJSECTOR_NAMECODE" Status="Valid">
+                    <Path>$."mjsector_namecode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="İBRDCOMMAMT" Status="Valid">
+                    <Path>$."ibrdcommamt"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="DOCTY" Status="Valid">
+                    <Path>$."docty"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="PERCENT1" Status="Valid">
+                    <Path>$."sector1"."Percent"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="PROJECTDOCS" Status="Valid">
+                    <Path>$."projectdocs"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="PERCENT4" Status="Valid">
+                    <Path>$."sector4"."Percent"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="ENTİTYID" Status="Valid">
+                    <Path>$."projectdocs"."EntityID"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="LENDPROJECTCOST" Status="Valid">
+                    <Path>$."lendprojectcost"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="COUNTRYNAME" Status="Valid">
+                    <Path>$."countryname"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME5" Status="Valid">
+                    <Path>$."sector2"."Name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="CODE2" Status="Valid">
+                    <Path>$."sector_namecode"."code"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="PROJECTSTATUSDİSPLAY" Status="Valid">
+                    <Path>$."projectstatusdisplay"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="SECTOR" Status="Valid">
+                    <Path>$."sector"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="OBJECT" DBDataType="NotApplicable" DBName="THEME1" Status="Valid">
+                    <Path>$."theme1"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="OBJECT" DBDataType="NotApplicable" DBName="SECTOR4" Status="Valid">
+                    <Path>$."sector4"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME7" Status="Valid">
+                    <Path>$."sector4"."Name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="PROJECT_NAME" Status="Valid">
+                    <Path>$."project_name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="SECTORCODE" Status="Valid">
+                    <Path>$."sectorcode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="PRODUCTLİNETYPE" Status="Valid">
+                    <Path>$."productlinetype"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="THEME_NAMECODE" Status="Valid">
+                    <Path>$."theme_namecode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="PROJECTFİNANCİALTYPE" Status="Valid">
+                    <Path>$."projectfinancialtype"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="İDACOMMAMT" Status="Valid">
+                    <Path>$."idacommamt"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME8" Status="Valid">
+                    <Path>$."sector_namecode"."name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="NAME9" Status="Valid">
+                    <Path>$."theme1"."Name"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="REGİONNAME" Status="Valid">
+                    <Path>$."regionname"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="TOTALCOMMAMT" Status="Valid">
+                    <Path>$."totalcommamt"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="NUMBER" DBDataType="NUMBER" DBName="PERCENT2" Status="Valid">
+                    <Path>$."sector2"."Percent"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="OBJECT" DBDataType="NotApplicable" DBName="_İD" Status="Valid">
+                    <Path>$."_id"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="STATUS" Status="Valid">
+                    <Path>$."status"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="CLOSİNGDATE" Status="Valid">
+                    <Path>$."closingdate"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="ENVASSESMENTCATEGORYCODE" Status="Valid">
+                    <Path>$."envassesmentcategorycode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="COUNTRYCODE" Status="Valid">
+                    <Path>$."countrycode"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="OBJECT" DBDataType="NotApplicable" DBName="SECTOR3" Status="Valid">
+                    <Path>$."sector3"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="STRING" DBDataType="VARCHAR2" DBName="PRODLİNE" Status="Valid">
+                    <Path>$."prodline"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="ARRAY" Unnest="true" DBDataType="NotApplicable" DBName="MAJORSECTOR_PERCENT" Status="Valid">
+                    <Path>$."majorsector_percent"</Path>
+                </JSONAttribute>
+                <JSONAttribute DataType="OBJECT" DBDataType="NotApplicable" DBName="PROJECT_ABSTRACT" Status="Valid">
+                    <Path>$."project_abstract"</Path>
+                </JSONAttribute>
+            </JSONAttributes>
+            <RelationalAttributes/>
+            <AggregationElements/>
+            <GroupingElement/>
+        </JSONQuery>
+    </Nodes>
+    <Links>
+        <Link Id="10003" From="10001" To="10002" Name="Link" Label="From &quot;WORLDBANK_JSON&quot; to &quot;JSON Query&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10009" From="10002" To="10008" Name="Link" Label="From &quot;JSON Query&quot; to &quot;Filter Rows&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10011" From="10008" To="10010" Name="Link" Label="From &quot;Filter Rows&quot; to &quot;SQL Query&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+    </Links>
+</WorkflowProcess>

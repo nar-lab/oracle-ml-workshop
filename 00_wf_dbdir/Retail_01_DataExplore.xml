@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkflowProcess Version="12.2.0.0.1" DBVersion="12.1.0.2.0" Schema="" xmlns="http://xmlns.oracle.com/odmr11">
+    <Nodes>
+        <DataSource Id="10001" Name="RETAIL_CATEGORIES" Status="Complete">
+            <Icon XCOORD="407" YCOORD="569"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10001" as (select "RETAIL_CATEGORIES"."CATEGORY_ID", 
+"RETAIL_CATEGORIES"."CATEGORY_NAME", 
+"RETAIL_CATEGORIES"."CATEGORY_DEPARTMENT_ID" 
+from "ZIRAAT"."RETAIL_CATEGORIES"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CATEGORY_DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="RETAIL_CATEGORIES" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10002" Name="RETAIL_PRODUCTS" Status="Complete">
+            <Icon XCOORD="277" YCOORD="568"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10002" as (select "RETAIL_PRODUCTS"."PRODUCT_DESCRIPTION", 
+"RETAIL_PRODUCTS"."PRODUCT_PRICE", 
+"RETAIL_PRODUCTS"."PRODUCT_ID", 
+"RETAIL_PRODUCTS"."PRODUCT_CATEGORY_ID", 
+"RETAIL_PRODUCTS"."PRODUCT_NAME", 
+"RETAIL_PRODUCTS"."PRODUCT_IMAGE" 
+from "ZIRAAT"."RETAIL_PRODUCTS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRODUCT_CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="RETAIL_PRODUCTS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10003" Name="RETAIL_DEPARTMENTS" Status="Complete">
+            <Icon XCOORD="550" YCOORD="569"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10003" as (select "RETAIL_DEPARTMENTS"."DEPARTMENT_NAME", 
+"RETAIL_DEPARTMENTS"."DEPARTMENT_ID" 
+from "ZIRAAT"."RETAIL_DEPARTMENTS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="RETAIL_DEPARTMENTS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10004" Name="RETAIL_CUSTOMERS" Status="Complete">
+            <Icon XCOORD="448" YCOORD="173"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10004" as (select "RETAIL_CUSTOMERS"."CUSTOMER_STATE", 
+"RETAIL_CUSTOMERS"."CUSTOMER_ZIPCODE", 
+"RETAIL_CUSTOMERS"."CUSTOMER_PASSWORD", 
+"RETAIL_CUSTOMERS"."CUSTOMER_EMAIL", 
+"RETAIL_CUSTOMERS"."CUSTOMER_ID", 
+"RETAIL_CUSTOMERS"."CUSTOMER_CITY", 
+"RETAIL_CUSTOMERS"."CUSTOMER_LNAME", 
+"RETAIL_CUSTOMERS"."CUSTOMER_FNAME", 
+"RETAIL_CUSTOMERS"."CUSTOMER_STREET" 
+from "ZIRAAT"."RETAIL_CUSTOMERS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="CUSTOMER_STATE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_ZIPCODE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_PASSWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_EMAIL" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CUSTOMER_CITY" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_LNAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_FNAME" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="CUSTOMER_STREET" DataType="VARCHAR2" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="RETAIL_CUSTOMERS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10005" Name="RETAIL_ORDERS" Status="Complete">
+            <Icon XCOORD="679" YCOORD="569"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10005" as (select "RETAIL_ORDERS"."ORDER_ID", 
+"RETAIL_ORDERS"."ORDER_DATE", 
+"RETAIL_ORDERS"."ORDER_CUSTOMER_ID", 
+"RETAIL_ORDERS"."ORDER_STATUS" 
+from "ZIRAAT"."RETAIL_ORDERS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_DATE" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="RETAIL_ORDERS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10006" Name="RETAIL_ORDER_ITEMS" Status="Complete">
+            <Icon XCOORD="210" YCOORD="454"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10006" as (select "RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_PRICE", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_ORDER_ID", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_ID", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_ID", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_QUANTITY", 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_SUBTOTAL" 
+from "ZIRAAT"."RETAIL_ORDER_ITEMS"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="RETAIL_ORDER_ITEMS" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataSource Id="10023" Name="WORLDBANK_JSON2" Status="Complete">
+            <Icon XCOORD="518" YCOORD="308"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10023" as (select "WORLDBANK_JSON2"."DOC", 
+"WORLDBANK_JSON2"."ID" 
+from "ZIRAAT"."WORLDBANK_JSON2"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="DOC" DataType="CLOB" Status="Valid" DataTypeQualifier="JSON"/>
+                <Attribute Name="ID" DataType="NUMBER" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="" Name="WORLDBANK_JSON2" Synonym="false"/>
+            <JSONColumns>
+                <Attribute Name="DOC">
+                    <DataGuideInfo Status="Ready" Generate="DEFAULT">
+                        <System/>
+                    </DataGuideInfo>
+                </Attribute>
+            </JSONColumns>
+            <DataGuideSettings Generate="false" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+                <StopPaths/>
+            </DataGuideSettings>
+            <includeAllAvailableAttributes>false</includeAllAvailableAttributes>
+        </DataSource>
+        <Join UseCartesian="false" Id="10007" Name="Join" Status="Invalid">
+            <Icon XCOORD="593" YCOORD="174"></Icon>
+            <Messages>
+                <Message Type="WARNING">
+                    <Resource Id="JOIN_NODE_NOT_USED_IN_KEY">
+                        <Parameters/>
+                    </Resource>
+                </Message>
+                <Message Type="WARNING">
+                    <Resource Id="JOIN_NO_OUTPUT">
+                        <Parameters/>
+                    </Resource>
+                </Message>
+                <Message Type="WARNING">
+                    <Resource Id="JOIN_NO_DATA">
+                        <Parameters/>
+                    </Resource>
+                </Message>
+            </Messages>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10007" as ( )</SQLExpression>
+            <KeyColumns AutoSpec="No"/>
+            <OutputColumns AutoSpec="Yes"/>
+        </Join>
+        <Join UseCartesian="false" Id="10010" Name="Item-Product" Status="Complete">
+            <Icon XCOORD="346" YCOORD="454"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10010" as (SELECT 
+"RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_PRICE"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_ORDER_ID"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_ID"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_QUANTITY"
+, "RETAIL_ORDER_ITEMS"."ORDER_ITEM_SUBTOTAL"
+, "RETAIL_PRODUCTS"."PRODUCT_DESCRIPTION"
+, "RETAIL_PRODUCTS"."PRODUCT_PRICE"
+, "RETAIL_PRODUCTS"."PRODUCT_CATEGORY_ID"
+, "RETAIL_PRODUCTS"."PRODUCT_NAME"
+, "RETAIL_PRODUCTS"."PRODUCT_IMAGE"
+
+FROM
+{INPUT_SOURCE:10006} "RETAIL_ORDER_ITEMS"
+LEFT OUTER JOIN {INPUT_SOURCE:10002} "RETAIL_PRODUCTS"
+ON "RETAIL_ORDER_ITEMS"."ORDER_ITEM_PRODUCT_ID" = "RETAIL_PRODUCTS"."PRODUCT_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Left Outer">
+                    <LeftColumn NodeId="10006" NodeName="RETAIL_ORDER_ITEMS" Key="Yes" Name="ORDER_ITEM_PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10002" NodeName="RETAIL_PRODUCTS" Key="Yes" Name="PRODUCT_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10006" NodeName="RETAIL_ORDER_ITEMS" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10002" NodeName="RETAIL_PRODUCTS" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Join UseCartesian="false" Id="10013" Name="Product-Category" Status="Complete">
+            <Icon XCOORD="468" YCOORD="454"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10013" as (SELECT 
+"Item-Product"."ORDER_ITEM_PRODUCT_PRICE"
+, "Item-Product"."ORDER_ITEM_ORDER_ID"
+, "Item-Product"."ORDER_ITEM_ID"
+, "Item-Product"."ORDER_ITEM_QUANTITY"
+, "Item-Product"."ORDER_ITEM_SUBTOTAL"
+, "Item-Product"."PRODUCT_DESCRIPTION"
+, "Item-Product"."PRODUCT_PRICE"
+, "Item-Product"."PRODUCT_NAME"
+, "Item-Product"."PRODUCT_IMAGE"
+, "RETAIL_CATEGORIES"."CATEGORY_NAME"
+, "RETAIL_CATEGORIES"."CATEGORY_DEPARTMENT_ID"
+
+FROM
+{INPUT_SOURCE:10010} "Item-Product"
+LEFT OUTER JOIN {INPUT_SOURCE:10001} "RETAIL_CATEGORIES"
+ON "Item-Product"."PRODUCT_CATEGORY_ID" = "RETAIL_CATEGORIES"."CATEGORY_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Left Outer">
+                    <LeftColumn NodeId="10010" NodeName="Item-Product" Key="Yes" Name="PRODUCT_CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10001" NodeName="RETAIL_CATEGORIES" Key="Yes" Name="CATEGORY_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10010" NodeName="Item-Product" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10001" NodeName="RETAIL_CATEGORIES" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10001" NodeName="RETAIL_CATEGORIES" Name="CATEGORY_DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Join UseCartesian="false" Id="10016" Name="Category-Dept" Status="Complete">
+            <Icon XCOORD="596" YCOORD="454"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10016" as (SELECT 
+"Product-Category"."ORDER_ITEM_PRODUCT_PRICE"
+, "Product-Category"."ORDER_ITEM_ORDER_ID"
+, "Product-Category"."ORDER_ITEM_ID"
+, "Product-Category"."ORDER_ITEM_QUANTITY"
+, "Product-Category"."ORDER_ITEM_SUBTOTAL"
+, "Product-Category"."PRODUCT_DESCRIPTION"
+, "Product-Category"."PRODUCT_PRICE"
+, "Product-Category"."PRODUCT_NAME"
+, "Product-Category"."PRODUCT_IMAGE"
+, "Product-Category"."CATEGORY_NAME"
+, "RETAIL_DEPARTMENTS"."DEPARTMENT_NAME"
+
+FROM
+{INPUT_SOURCE:10013} "Product-Category"
+LEFT OUTER JOIN {INPUT_SOURCE:10003} "RETAIL_DEPARTMENTS"
+ON "Product-Category"."CATEGORY_DEPARTMENT_ID" = "RETAIL_DEPARTMENTS"."DEPARTMENT_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Left Outer">
+                    <LeftColumn NodeId="10013" NodeName="Product-Category" Key="Yes" Name="CATEGORY_DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10003" NodeName="RETAIL_DEPARTMENTS" Key="Yes" Name="DEPARTMENT_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10013" NodeName="Product-Category" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10003" NodeName="RETAIL_DEPARTMENTS" Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <Join UseCartesian="false" Id="10019" Name="Item-Order" Status="Complete">
+            <Icon XCOORD="712" YCOORD="453"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+                <OutputTable Name="ODMR$17_13_14_370035VWWXXFB" CreationDate="2017-07-09T17:24:02"/>
+            </CacheSettings>
+            <SQLExpression>"N$10019" as (SELECT 
+"Category-Dept"."ORDER_ITEM_PRODUCT_PRICE"
+, "Category-Dept"."ORDER_ITEM_ID"
+, "Category-Dept"."ORDER_ITEM_QUANTITY"
+, "Category-Dept"."ORDER_ITEM_SUBTOTAL"
+, "Category-Dept"."PRODUCT_DESCRIPTION"
+, "Category-Dept"."PRODUCT_PRICE"
+, "Category-Dept"."PRODUCT_NAME"
+, "Category-Dept"."PRODUCT_IMAGE"
+, "Category-Dept"."CATEGORY_NAME"
+, "Category-Dept"."DEPARTMENT_NAME"
+, "RETAIL_ORDERS"."ORDER_ID"
+, "RETAIL_ORDERS"."ORDER_DATE"
+, "RETAIL_ORDERS"."ORDER_CUSTOMER_ID"
+, "RETAIL_ORDERS"."ORDER_STATUS"
+
+FROM
+{INPUT_SOURCE:10016} "Category-Dept"
+LEFT OUTER JOIN {INPUT_SOURCE:10005} "RETAIL_ORDERS"
+ON "Category-Dept"."ORDER_ITEM_ORDER_ID" = "RETAIL_ORDERS"."ORDER_ID"
+
+ )</SQLExpression>
+            <KeyColumns AutoSpec="No">
+                <JoinColumn Type="Left Outer">
+                    <LeftColumn NodeId="10016" NodeName="Category-Dept" Key="Yes" Name="ORDER_ITEM_ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                    <RightColumn NodeId="10005" NodeName="RETAIL_ORDERS" Key="Yes" Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                </JoinColumn>
+            </KeyColumns>
+            <OutputColumns AutoSpec="No">
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="ORDER_ITEM_PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="ORDER_ITEM_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="ORDER_ITEM_QUANTITY" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="ORDER_ITEM_SUBTOTAL" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="PRODUCT_DESCRIPTION" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="PRODUCT_PRICE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="PRODUCT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="PRODUCT_IMAGE" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="CATEGORY_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10016" NodeName="Category-Dept" Name="DEPARTMENT_NAME" DataType="VARCHAR2" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDERS" Name="ORDER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDERS" Name="ORDER_DATE" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDERS" Name="ORDER_CUSTOMER_ID" DataType="NUMBER" Status="Valid"/>
+                <RefDBColumn NodeId="10005" NodeName="RETAIL_ORDERS" Name="ORDER_STATUS" DataType="VARCHAR2" Status="Valid"/>
+            </OutputColumns>
+        </Join>
+        <JSONQuery Id="10022" Name="JSON Query" Status="Complete">
+            <Icon XCOORD="657" YCOORD="307"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10022_1" as (SELECT 
+t0."ID"
+FROM
+{INPUT_SOURCE} t0
+)
+,
+"N$10022" as (  SELECT t0."ID"
+  FROM "N$10022_1" t0)
+</SQLExpression>
+            <JSONAttributes Source="DOC" DataType="CLOB"/>
+            <RelationalAttributes>
+                <Attribute NewDataType="NUMBER" Name="ID" DataType="NUMBER" Status="Valid"/>
+            </RelationalAttributes>
+            <AggregationElements/>
+            <GroupingElement/>
+            <JSONFilters Match="All" UseBy="All"/>
+        </JSONQuery>
+    </Nodes>
+    <Links>
+        <Link Id="10008" From="10004" To="10007" Name="Link" Label="From &quot;RETAIL_CUSTOMERS&quot; to &quot;Join&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10011" From="10006" To="10010" Name="Link" Label="From &quot;RETAIL_ORDER_ITEMS&quot; to &quot;Item-Product&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10012" From="10002" To="10010" Name="Link" Label="From &quot;RETAIL_PRODUCTS&quot; to &quot;Item-Product&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10014" From="10010" To="10013" Name="Link" Label="From &quot;Item-Product&quot; to &quot;Product-Category&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10015" From="10001" To="10013" Name="Link" Label="From &quot;RETAIL_CATEGORIES&quot; to &quot;Product-Category&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10017" From="10013" To="10016" Name="Link" Label="From &quot;Product-Category&quot; to &quot;Category-Dept&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10018" From="10003" To="10016" Name="Link" Label="From &quot;RETAIL_DEPARTMENTS&quot; to &quot;Category-Dept&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10020" From="10016" To="10019" Name="Link" Label="From &quot;Category-Dept&quot; to &quot;Item-Order&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10021" From="10005" To="10019" Name="Link" Label="From &quot;RETAIL_ORDERS&quot; to &quot;Item-Order&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10024" From="10023" To="10022" Name="Link" Label="From &quot;WORLDBANK_JSON2&quot; to &quot;JSON Query&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+    </Links>
+</WorkflowProcess>

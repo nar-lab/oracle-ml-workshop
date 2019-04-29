@@ -1,0 +1,138 @@
+
+DROP TABLE RETAIL_DEPARTMENTS;
+CREATE TABLE RETAIL_DEPARTMENTS
+(
+  DEPARTMENT_ID                   NUMBER,
+  DEPARTMENT_NAME                 VARCHAR2(100)
+)
+ORGANIZATION EXTERNAL
+(
+  TYPE ORACLE_HIVE
+  DEFAULT DIRECTORY DEFAULT_DIR
+  ACCESS PARAMETERS
+  (
+    com.oracle.bigdata.tablename=retail_db.departments
+  )
+)
+REJECT LIMIT UNLIMITED;
+
+DROP TABLE RETAIL_CATEGORIES;
+CREATE TABLE RETAIL_CATEGORIES
+(
+  CATEGORY_ID                   NUMBER,
+  CATEGORY_DEPARTMENT_ID        NUMBER,
+  CATEGORY_NAME                 VARCHAR2(100)
+)
+ORGANIZATION EXTERNAL
+(
+  TYPE ORACLE_HIVE
+  DEFAULT DIRECTORY DEFAULT_DIR
+  ACCESS PARAMETERS
+  (
+    com.oracle.bigdata.tablename=retail_db.categories
+  )
+)
+REJECT LIMIT UNLIMITED;
+
+DROP TABLE RETAIL_PRODUCTS;
+CREATE TABLE RETAIL_PRODUCTS
+(
+  PRODUCT_ID                     NUMBER,
+  PRODUCT_CATEGORY_ID           NUMBER,
+  PRODUCT_NAME                  VARCHAR2(100),
+  PRODUCT_DESCRIPTION           VARCHAR2(300),
+  PRODUCT_PRICE                 DECIMAL(38,4),
+  PRODUCT_IMAGE                 VARCHAR2(300)
+)
+ORGANIZATION EXTERNAL
+(
+  TYPE ORACLE_HIVE
+  DEFAULT DIRECTORY DEFAULT_DIR
+  ACCESS PARAMETERS
+  (
+    com.oracle.bigdata.tablename=retail_db.products
+  )
+)
+REJECT LIMIT UNLIMITED;
+
+DROP TABLE RETAIL_CUSTOMERS;
+CREATE TABLE RETAIL_CUSTOMERS
+(
+  CUSTOMER_ID                   NUMBER,
+  CUSTOMER_FNAME                VARCHAR2(100),
+  CUSTOMER_LNAME                VARCHAR2(100),
+  CUSTOMER_EMAIL                VARCHAR2(100),
+  CUSTOMER_PASSWORD             VARCHAR2(100),
+  CUSTOMER_STREET               VARCHAR2(300),
+  CUSTOMER_CITY                 VARCHAR2(100),
+  CUSTOMER_STATE                VARCHAR2(100),
+  CUSTOMER_ZIPCODE              VARCHAR2(100)
+)
+ORGANIZATION EXTERNAL
+(
+  TYPE ORACLE_HIVE
+  DEFAULT DIRECTORY DEFAULT_DIR
+  ACCESS PARAMETERS
+  (
+    com.oracle.bigdata.tablename=retail_db.customers
+  )
+)
+REJECT LIMIT UNLIMITED;
+
+DROP TABLE RETAIL_ORDERS;
+CREATE TABLE RETAIL_ORDERS
+(
+  ORDER_ID                      NUMBER,
+  ORDER_DATE                    NUMBER,
+  ORDER_CUSTOMER_ID             NUMBER,
+  ORDER_STATUS                  VARCHAR2(50)
+)
+ORGANIZATION EXTERNAL
+(
+  TYPE ORACLE_HIVE
+  DEFAULT DIRECTORY DEFAULT_DIR
+  ACCESS PARAMETERS
+  (
+    com.oracle.bigdata.tablename=retail_db.orders
+  )
+)
+REJECT LIMIT UNLIMITED;
+
+DROP TABLE RETAIL_ORDER_ITEMS;
+CREATE TABLE RETAIL_ORDER_ITEMS
+(
+  ORDER_ITEM_ID                 NUMBER,
+  ORDER_ITEM_ORDER_ID           NUMBER,
+  ORDER_ITEM_PRODUCT_ID         NUMBER,
+  ORDER_ITEM_QUANTITY           NUMBER,
+  ORDER_ITEM_SUBTOTAL           DECIMAL(38,4),
+  ORDER_ITEM_PRODUCT_PRICE      DECIMAL(38,4)
+)
+ORGANIZATION EXTERNAL
+(
+  TYPE ORACLE_HIVE
+  DEFAULT DIRECTORY DEFAULT_DIR
+  ACCESS PARAMETERS
+  (
+    com.oracle.bigdata.tablename=retail_db.order_items
+  )
+)
+REJECT LIMIT UNLIMITED;
+
+
+BEGIN
+   
+
+    DBMS_REDACT.ADD_POLICY(
+            object_schema => 'ZIRAAT',
+            object_name => 'RETAIL_CUSTOMERS',
+            column_name => 'CUSTOMER_ID',
+            policy_name => 'retail_customer_redact',
+            function_type => DBMS_REDACT.PARTIAL,
+            function_parameters => '9,1,7',
+            expression => '1=1'
+            );
+
+ END;
+/
+

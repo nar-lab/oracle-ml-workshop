@@ -1,0 +1,83 @@
+
+SQL*Loader: Release 12.1.0.2.0 - Production on Tue Sep 26 06:19:40 2017
+
+Copyright (c) 1982, 2014, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   control_files/district.ctl
+Data File:      data_files/district.csv
+  File processing option string: "str '
+'"
+  Bad File:     bad_records/district.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+Silent options: FEEDBACK, ERRORS and DISCARDS
+
+Table BERKA_DISTRICT, loaded from every logical record.
+Insert option in effect for this table: APPEND
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+DISTRICT_ID                         FIRST  4000   ;  O(") CHARACTER            
+                                                      O(")
+DISTRICT_NAME                        NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+REGION                               NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_INHAB                         NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_INHAB_L5                      NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_INHAB_5_2K                    NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_INHAB_2K_10K                  NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_INHAB_U10K                    NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_CITIES                        NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+RATIO_OF_URB_INH                     NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+AVG_SALARY                           NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+UNEMP_RATE_95                        NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+UNEMP_RATE_96                        NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_ENTERP                        NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_COMM_CRIME_95                 NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+NUM_OF_COMM_CRIME_96                 NEXT  4000   ;  O(") CHARACTER            
+                                                      O(")
+
+value used for ROWS parameter changed from 64 to 3
+
+Table BERKA_DISTRICT:
+  77 Rows successfully loaded.
+  0 Rows not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 192096 bytes(3 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:            77
+Total logical records rejected:         0
+Total logical records discarded:        0
+
+Run began on Tue Sep 26 06:19:40 2017
+Run ended on Tue Sep 26 06:19:42 2017
+
+Elapsed time was:     00:00:01.47
+CPU time was:         00:00:00.03

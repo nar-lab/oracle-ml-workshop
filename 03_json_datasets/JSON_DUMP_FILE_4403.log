@@ -1,0 +1,26 @@
+
+
+ LOG file opened at 11/06/17 02:45:16
+
+Field Definitions for table JSON_DUMP_FILE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    JSON_DOC                        CHAR (5000)
+      Trim whitespace same as SQL Loader
+
+
+ LOG file opened at 11/06/17 02:52:14
+
+Field Definitions for table JSON_DUMP_FILE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    JSON_DOC                        CHAR (5000)
+      Trim whitespace same as SQL Loader

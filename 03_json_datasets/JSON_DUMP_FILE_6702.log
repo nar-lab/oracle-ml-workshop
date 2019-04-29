@@ -1,0 +1,60 @@
+
+
+ LOG file opened at 11/03/17 09:38:28
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+Field Definitions for table JSON_DUMP_FILE
+  Record format DELIMITED, delimited by 0A
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    JSON_DOC                        CHAR (5000)
+      Trim whitespace same as SQL Loader
+
+
+ LOG file opened at 11/03/17 09:41:24
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+Field Definitions for table JSON_DUMP_FILE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    JSON_DOC                        CHAR (5000)
+      Trim whitespace same as SQL Loader
+
+
+ LOG file opened at 11/03/17 09:41:54
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+Field Definitions for table JSON_DUMP_FILE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    JSON_DOC                        CHAR (5000)
+      Trim whitespace same as SQL Loader
+
+
+ LOG file opened at 11/03/17 09:42:14
+
+KUP-05004:   Warning: Intra source concurrency disabled because parallel select was not requested.
+
+Field Definitions for table JSON_DUMP_FILE
+  Record format DELIMITED BY NEWLINE
+  Data in file has same endianness as the platform
+  Rows with all null fields are accepted
+
+  Fields in Data Source: 
+
+    JSON_DOC                        CHAR (5000)
+      Trim whitespace same as SQL Loader

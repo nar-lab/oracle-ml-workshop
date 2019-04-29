@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<WorkflowProcess Version="12.1.0.2.3" DBVersion="12.1.0.2.0" Schema="ZIRAAT" xmlns="http://xmlns.oracle.com/odmr11">
+    <Nodes>
+        <DataSource Id="10001" Name="RETAIL_WEB_DATA" Status="Complete">
+            <Icon XCOORD="161" YCOORD="250"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10001" as (select "RETAIL_WEB_DATA"."DATESTA", 
+"RETAIL_WEB_DATA"."MONTH", 
+"RETAIL_WEB_DATA"."SESSIONID", 
+"RETAIL_WEB_DATA"."YEAR", 
+"RETAIL_WEB_DATA"."COOKIE_ID", 
+"RETAIL_WEB_DATA"."DATESTAMP", 
+"RETAIL_WEB_DATA"."PAGE", 
+"RETAIL_WEB_DATA"."PRODUCTID", 
+"RETAIL_WEB_DATA"."SEARCH_KEYWORD" 
+from "ZIRAAT"."RETAIL_WEB_DATA"  )</SQLExpression>
+            <Attributes>
+                <Attribute Name="DATESTA" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="MONTH" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="SESSIONID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="YEAR" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="DATESTAMP" DataType="TIMESTAMP(6)" Status="Valid"/>
+                <Attribute Name="PAGE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCTID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="SEARCH_KEYWORD" DataType="VARCHAR2" Status="Valid"/>
+            </Attributes>
+            <SourceTable Schema="ZIRAAT" Name="RETAIL_WEB_DATA" Synonym="false"/>
+            <JSONColumns/>
+            <DataGuideSettings Generate="true" UseFullData="false" UseFullDoc="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <NumberOfValues>10000</NumberOfValues>
+            </DataGuideSettings>
+        </DataSource>
+        <DataProfile Id="10002" Name="Retail Web Explore" Status="Complete">
+            <Icon XCOORD="247" YCOORD="144"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10002" AS ( SELECT   ATTR,
+  DATA_TYPE,
+  NULL_PERCENT,
+  DISTINCT_CNT,
+  DISTINCT_PERCENT,
+  MODE_VALUE,
+  AVG,
+  AVG_DATE,
+  AVG_TS_TZ,
+  MEDIAN_VAL,
+  MEDIAN_DATE,
+  MEDIAN_TS_TZ,
+  MIN,
+  MAX,
+  STD,
+  VAR,
+  SKEWNESS,
+  KURTOSIS,
+  HISTOGRAMS FROM RETAIL_WEB_DATA_EXP)</SQLExpression>
+            <DataProfileInput>
+                <Attributes>
+                    <Attribute Name="DATESTA" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="MONTH" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="SESSIONID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="YEAR" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DATESTAMP" DataType="TIMESTAMP(6)" Status="Valid"/>
+                    <Attribute Name="PAGE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="PRODUCTID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="SEARCH_KEYWORD" DataType="VARCHAR2" Status="Valid"/>
+                </Attributes>
+            </DataProfileInput>
+            <DataProfileOutput>
+                <Attributes>
+                    <Attribute Name="ATTR" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="DATA_TYPE" DataType="VARCHAR2" Status="Valid"/>
+                    <Attribute Name="NULL_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_CNT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="DISTINCT_PERCENT" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MODE_VALUE" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="AVG" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="AVG_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="AVG_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_VAL" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MEDIAN_DATE" DataType="DATE" Status="Valid"/>
+                    <Attribute Name="MEDIAN_TS_TZ" DataType="TIMESTAMP WITH TIME ZONE" Status="Valid"/>
+                    <Attribute Name="MIN" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="MAX" DataType="NVARCHAR2" Status="Valid"/>
+                    <Attribute Name="STD" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="VAR" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="SKEWNESS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="KURTOSIS" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="HISTOGRAMS" DataType="ODMR_HISTOGRAMS" Status="Valid"/>
+                </Attributes>
+            </DataProfileOutput>
+            <DataProfileSettings>
+                <NumericalBins>10</NumericalBins>
+                <CategoricalBins>10</CategoricalBins>
+                <DateBins>10</DateBins>
+            </DataProfileSettings>
+            <StatisticTable Name="RETAIL_WEB_DATA_EXP" CreationDate="2017-07-20T13:55:09"/>
+            <StatsSelection percentdistinct="true" percentnull="true" max="true" min="true" avg="true" std="true" var="true" kurtosis="false" median="true" skewness="false" mode="true" modesampled="true" modeall="false" histogram="true" rowcount="3028517"/>
+            <SampleSettings UseFullData="true" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <Random Seed="12345"/>
+                </Method>
+            </SampleSettings>
+        </DataProfile>
+        <Aggregation Id="10012" Name="Click Paths" Status="Complete">
+            <Icon XCOORD="682" YCOORD="249"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10012" as (SELECT  t0."COOKIE_ID",  t0."MATCH_NUM",  t0."TOTAL_DAYS", 
+ t0."CLICK_PATH"
+FROM
+  (SELECT  "COOKIE_ID","MATCH_NUM","TOTAL_DAYS", 
+    LISTAGG("PAGE" , '; ') WITHIN GROUP (ORDER BY "DATESTAMP" ) "CLICK_PATH"
+  FROM {INPUT_SOURCE}
+   
+  GROUP BY "COOKIE_ID","MATCH_NUM","TOTAL_DAYS") t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Expression>LISTAGG("PAGE" , '; ') WITHIN GROUP (ORDER BY "DATESTAMP" )</Expression>
+                    </Source>
+                    <Output Name="CLICK_PATH" DataType="VARCHAR2" Status="Valid" Alias="CLICK_PATH"/>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MATCH_NUM" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="TOTAL_DAYS" DataType="NUMBER" Status="Valid"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <Aggregation Id="10014" Name="Dominant Paths" Status="Complete">
+            <Icon XCOORD="809" YCOORD="249"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+                <OutputTable Name="ODMR$15_42_12_609710JCNWAYI" CreationDate="2017-07-20T15:44:01"/>
+            </CacheSettings>
+            <SQLExpression>"N$10014" as (SELECT  t0."CLICK_PATH", 
+ t0."COOKIE_ID_COUNT", 
+ t0."COOKIE_ID_COUNT_DISTINCT"
+FROM
+  (SELECT  "CLICK_PATH", 
+    COUNT("COOKIE_ID") "COOKIE_ID_COUNT"
+    ,COUNT(DISTINCT("COOKIE_ID")) "COOKIE_ID_COUNT_DISTINCT"
+  FROM {INPUT_SOURCE}
+   
+  GROUP BY "CLICK_PATH") t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="COOKIE_ID_COUNT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="COOKIE_ID_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Name="CLICK_PATH" DataType="VARCHAR2" Status="Valid" Alias="CLICK_PATH"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <Aggregation Id="10020" Name="Click Paths 1" Status="Complete">
+            <Icon XCOORD="736" YCOORD="359"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10020" as (SELECT  t0."COOKIE_ID",  t0."MATCH_NUM",  t0."TOTAL_DAYS", 
+ t0."CLICK_PATH"
+FROM
+  (SELECT  "COOKIE_ID","MATCH_NUM","TOTAL_DAYS", 
+    LISTAGG("PAGE" , '; ') WITHIN GROUP (ORDER BY "DATESTAMP" ) "CLICK_PATH"
+  FROM {INPUT_SOURCE}
+   
+  GROUP BY "COOKIE_ID","MATCH_NUM","TOTAL_DAYS") t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Expression>LISTAGG("PAGE" , '; ') WITHIN GROUP (ORDER BY "DATESTAMP" )</Expression>
+                    </Source>
+                    <Output Name="CLICK_PATH" DataType="VARCHAR2" Status="Valid" Alias="CLICK_PATH"/>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="MATCH_NUM" DataType="NUMBER" Status="Valid"/>
+                    <Attribute Name="TOTAL_DAYS" DataType="NUMBER" Status="Valid"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <Aggregation Id="10023" Name="Dominant Paths 1" Status="Complete">
+            <Icon XCOORD="854" YCOORD="359"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+                <OutputTable Name="ODMR$16_10_35_459762AKORBKQ" CreationDate="2017-07-20T16:12:53"/>
+            </CacheSettings>
+            <SQLExpression>"N$10023" as (SELECT  t0."CLICK_PATH", 
+ t0."COOKIE_ID_COUNT", 
+ t0."COOKIE_ID_COUNT_DISTINCT"
+FROM
+  (SELECT  "CLICK_PATH", 
+    COUNT("COOKIE_ID") "COOKIE_ID_COUNT"
+    ,COUNT(DISTINCT("COOKIE_ID")) "COOKIE_ID_COUNT_DISTINCT"
+  FROM {INPUT_SOURCE}
+   
+  GROUP BY "CLICK_PATH") t0
+ )</SQLExpression>
+            <AggregationElements>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="COOKIE_ID_COUNT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT()</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+                <AggregationElement>
+                    <Source>
+                        <Attributes>
+                            <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                        </Attributes>
+                    </Source>
+                    <Output Name="COOKIE_ID_COUNT_DISTINCT" DataType="NUMBER" Status="Valid"/>
+                    <AggregationFunction>COUNT(DISTINCT())</AggregationFunction>
+                    <SubGroupBy>
+                        <Attributes/>
+                    </SubGroupBy>
+                </AggregationElement>
+            </AggregationElements>
+            <GroupingElement>
+                <Attributes>
+                    <Attribute Name="CLICK_PATH" DataType="VARCHAR2" Status="Valid" Alias="CLICK_PATH"/>
+                </Attributes>
+            </GroupingElement>
+            <AutoSpec>Yes</AutoSpec>
+        </Aggregation>
+        <ColumnFilter Id="10004" Name="Redundant Variables" Status="Complete">
+            <Icon XCOORD="314" YCOORD="250"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10004" as (SELECT 
+"COOKIE_ID",
+"DATESTAMP",
+"PAGE",
+"PRODUCTID",
+"SEARCH_KEYWORD",
+"SESSIONID"
+FROM {INPUT_SOURCE}
+ )</SQLExpression>
+            <ColumnFilterSettings NumberOfRows="2000">
+                <DataQualitySettings NullsPercent="95.0" UniquePercent="95.0" ConstantPercent="95.0"/>
+                <AttrImportantSettings SamplingType="System" StratifiedCutoff="10"/>
+            </ColumnFilterSettings>
+            <ColumnFilterAttributes AutoSpec="No" AutomaticFilterEnable="No">
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="DATESTA" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="DATESTAMP" DataType="TIMESTAMP(6)" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="MONTH" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="PAGE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="PRODUCTID" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="SEARCH_KEYWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="Yes" Name="SESSIONID" DataType="NUMBER" Status="Valid"/>
+                <Attribute AutomaticFiltering="false" Output="No" Name="YEAR" DataType="NUMBER" Status="Valid"/>
+            </ColumnFilterAttributes>
+            <ColumnFilterResults DataQualityOutput="ODMR$13_59_15_218530EVZLYPG" GenerateImportanceOutput="false">
+                <Attribute Name="COOKIE_ID">
+                    <Reason Type="UNIQUE_LIMIT"/>
+                </Attribute>
+                <Attribute Name="DATESTA"/>
+                <Attribute Name="DATESTAMP"/>
+                <Attribute Name="MONTH"/>
+                <Attribute Name="PAGE"/>
+                <Attribute Name="PRODUCTID"/>
+                <Attribute Name="SEARCH_KEYWORD"/>
+                <Attribute Name="SESSIONID"/>
+                <Attribute Name="YEAR">
+                    <Reason Type="CONSTANT_LIMIT"/>
+                </Attribute>
+            </ColumnFilterResults>
+        </ColumnFilter>
+        <RowFilter Id="10016" Name="Unmatched Patterns" Status="Complete">
+            <Icon XCOORD="561" YCOORD="249"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10016" as (SELECT 
+"COOKIE_ID"
+, "DATESTAMP"
+, "MATCH_NUM"
+, "VAR_MATCH"
+, "UP_DAYS"
+, "TOTAL_DAYS"
+, "CNT_DAYS"
+, "PAGE"
+, "PRODUCTID"
+, "SEARCH_KEYWORD"
+, "SESSIONID"
+
+FROM
+{INPUT_SOURCE}
+WHERE
+NVL("MATCH_NUM",0) &gt; 0 )</SQLExpression>
+            <OutputColumns>
+                <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="DATESTAMP" DataType="TIMESTAMP" Status="Valid"/>
+                <Attribute Name="MATCH_NUM" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="VAR_MATCH" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="UP_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="TOTAL_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CNT_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PAGE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCTID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="SEARCH_KEYWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="SESSIONID" DataType="NUMBER" Status="Valid"/>
+            </OutputColumns>
+            <Filter>NVL("MATCH_NUM",0) &gt; 0</Filter>
+        </RowFilter>
+        <RowFilter Id="10021" Name="Unmatched Patterns 1" Status="Complete">
+            <Icon XCOORD="605" YCOORD="359"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="false">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+            </CacheSettings>
+            <SQLExpression>"N$10021" as (SELECT 
+"COOKIE_ID"
+, "DATESTAMP"
+, "MATCH_NUM"
+, "VAR_MATCH"
+, "UP_DAYS"
+, "TOTAL_DAYS"
+, "CNT_DAYS"
+, "PAGE"
+, "PRODUCTID"
+, "SEARCH_KEYWORD"
+, "SESSIONID"
+
+FROM
+{INPUT_SOURCE}
+WHERE
+NVL("MATCH_NUM",0) &gt; 0 )</SQLExpression>
+            <OutputColumns>
+                <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="DATESTAMP" DataType="TIMESTAMP" Status="Valid"/>
+                <Attribute Name="MATCH_NUM" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="VAR_MATCH" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="UP_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="TOTAL_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CNT_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PAGE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCTID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="SEARCH_KEYWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="SESSIONID" DataType="NUMBER" Status="Valid"/>
+            </OutputColumns>
+            <Filter>NVL("MATCH_NUM",0) &gt; 0</Filter>
+        </RowFilter>
+        <SQLQuery HasWithClause="false" GenerateView="false" ViewName="OUTPUT_2_20" Id="10006" Name="Cart Patterns" Status="Complete">
+            <Icon XCOORD="441" YCOORD="249"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+                <OutputTable Name="ODMR$14_40_46_856391QJGKUMD" CreationDate="2017-07-20T14:42:10"/>
+            </CacheSettings>
+            <SQLExpression>"Filter Columns_N$10004" as (SELECT * FROM {INPUT_SOURCE:10004}),
+"N$10006" as (SELECT *
+FROM "Filter Columns_N$10004"
+MATCH_RECOGNIZE (
+  PARTITION BY "COOKIE_ID"
+  ORDER BY "DATESTAMP"
+  MEASURES
+    MATCH_NUMBER() AS match_num,
+    CLASSIFIER() AS var_match,
+    FINAL COUNT(NOT_CART.DATESTAMP) AS up_days,
+    FINAL COUNT(DATESTAMP) AS total_days,
+    RUNNING COUNT(DATESTAMP) AS cnt_days
+  ALL ROWS PER MATCH WITH UNMATCHED ROWS
+  AFTER MATCH SKIP TO LAST CART
+  PATTERN (NOT_CART{1,5} CART)
+  DEFINE
+    CART AS "PRODUCTID" &gt; 0,
+    NOT_CART AS  "PRODUCTID" = 0))
+</SQLExpression>
+            <SQLQueryExpression>SELECT *
+FROM "Filter Columns_N$10004"
+MATCH_RECOGNIZE (
+  PARTITION BY "COOKIE_ID"
+  ORDER BY "DATESTAMP"
+  MEASURES
+    MATCH_NUMBER() AS match_num,
+    CLASSIFIER() AS var_match,
+    FINAL COUNT(NOT_CART.DATESTAMP) AS up_days,
+    FINAL COUNT(DATESTAMP) AS total_days,
+    RUNNING COUNT(DATESTAMP) AS cnt_days
+  ALL ROWS PER MATCH WITH UNMATCHED ROWS
+  AFTER MATCH SKIP TO LAST CART
+  PATTERN (NOT_CART{1,5} CART)
+  DEFINE
+    CART AS "PRODUCTID" &gt; 0,
+    NOT_CART AS  "PRODUCTID" = 0)</SQLQueryExpression>
+            <SQLQueryOutputColumns>
+                <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="DATESTAMP" DataType="TIMESTAMP" Status="Valid"/>
+                <Attribute Name="MATCH_NUM" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="VAR_MATCH" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="UP_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="TOTAL_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CNT_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PAGE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCTID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="SEARCH_KEYWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="SESSIONID" DataType="NUMBER" Status="Valid"/>
+            </SQLQueryOutputColumns>
+        </SQLQuery>
+        <SQLQuery HasWithClause="false" GenerateView="false" ViewName="OUTPUT_3_20" Id="10008" Name="Purchase Patterns" Status="Complete">
+            <Icon XCOORD="450" YCOORD="358"></Icon>
+            <Messages/>
+            <Parallelism Enable="false">
+                <SystemDetermined/>
+            </Parallelism>
+            <CacheSettings UseFullData="false" GenerateCache="true">
+                <NumberOfRows>2000</NumberOfRows>
+                <Method>
+                    <TopN/>
+                </Method>
+                <OutputTable Name="ODMR$14_48_22_953948WIBOXEJ" CreationDate="2017-07-20T14:50:39"/>
+            </CacheSettings>
+            <SQLExpression>"Filter Columns_N$10004" as (SELECT * FROM {INPUT_SOURCE:10004}),
+"N$10008" as (SELECT *
+FROM "Filter Columns_N$10004"
+MATCH_RECOGNIZE (
+  PARTITION BY "COOKIE_ID"
+  ORDER BY "DATESTAMP"
+  MEASURES
+    MATCH_NUMBER() AS match_num,
+    CLASSIFIER() AS var_match,
+    FINAL COUNT(NOT_PRCH.DATESTAMP) AS up_days,
+    FINAL COUNT(DATESTAMP) AS total_days,
+    RUNNING COUNT(DATESTAMP) AS cnt_days
+  ALL ROWS PER MATCH WITH UNMATCHED ROWS
+  AFTER MATCH SKIP TO LAST PRCH
+  PATTERN (NOT_PRCH{1,5} PRCH)
+  DEFINE
+    PRCH AS "PAGE" = 'checkout',
+    NOT_PRCH AS  "PAGE" &lt;&gt; 'checkout'))
+</SQLExpression>
+            <SQLQueryExpression>SELECT *
+FROM "Filter Columns_N$10004"
+MATCH_RECOGNIZE (
+  PARTITION BY "COOKIE_ID"
+  ORDER BY "DATESTAMP"
+  MEASURES
+    MATCH_NUMBER() AS match_num,
+    CLASSIFIER() AS var_match,
+    FINAL COUNT(NOT_PRCH.DATESTAMP) AS up_days,
+    FINAL COUNT(DATESTAMP) AS total_days,
+    RUNNING COUNT(DATESTAMP) AS cnt_days
+  ALL ROWS PER MATCH WITH UNMATCHED ROWS
+  AFTER MATCH SKIP TO LAST PRCH
+  PATTERN (NOT_PRCH{1,5} PRCH)
+  DEFINE
+    PRCH AS "PAGE" = 'checkout',
+    NOT_PRCH AS  "PAGE" &lt;&gt; 'checkout')</SQLQueryExpression>
+            <SQLQueryOutputColumns>
+                <Attribute Name="COOKIE_ID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="DATESTAMP" DataType="TIMESTAMP" Status="Valid"/>
+                <Attribute Name="MATCH_NUM" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="VAR_MATCH" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="UP_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="TOTAL_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="CNT_DAYS" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="PAGE" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="PRODUCTID" DataType="NUMBER" Status="Valid"/>
+                <Attribute Name="SEARCH_KEYWORD" DataType="VARCHAR2" Status="Valid"/>
+                <Attribute Name="SESSIONID" DataType="NUMBER" Status="Valid"/>
+            </SQLQueryOutputColumns>
+        </SQLQuery>
+    </Nodes>
+    <Links>
+        <Link Id="10003" From="10001" To="10002" Name="Link" Label="From &quot;RETAIL_WEB_DATA&quot; to &quot;Retail Web Explore&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10005" From="10001" To="10004" Name="Link" Label="From &quot;RETAIL_WEB_DATA&quot; to &quot;Redundant Variables&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10007" From="10004" To="10006" Name="Link" Label="From &quot;Redundant Variables&quot; to &quot;Cart Patterns&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10009" From="10004" To="10008" Name="Link" Label="From &quot;Redundant Variables&quot; to &quot;Purchase Patterns&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10015" From="10012" To="10014" Name="Link" Label="From &quot;Click Paths&quot; to &quot;Dominant Paths&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10017" From="10006" To="10016" Name="Link" Label="From &quot;Cart Patterns&quot; to &quot;Unmatched Patterns&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10018" From="10016" To="10012" Name="Link" Label="From &quot;Unmatched Patterns&quot; to &quot;Click Paths&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10019" From="10021" To="10020" Name="Link" Label="From &quot;Unmatched Patterns 1&quot; to &quot;Click Paths 1&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10022" From="10008" To="10021" Name="Link" Label="From &quot;Purchase Patterns&quot; to &quot;Unmatched Patterns 1&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+        <Link Id="10024" From="10020" To="10023" Name="Link" Label="From &quot;Click Paths 1&quot; to &quot;Dominant Paths 1&quot;">
+            <ConnectorGraphicsInfo>
+                <Coordinates XCoordinate="0.0" YCoordinate="0.0"/>
+            </ConnectorGraphicsInfo>
+        </Link>
+    </Links>
+</WorkflowProcess>
